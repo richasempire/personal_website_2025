@@ -1,0 +1,59 @@
+/* Setting */
+
+/* Background Colors */
+$default_bg: #E5E5E5;
+$extra_bg: #E5E5E5;
+$lines_color: #D4C9C9;
+
+/* Colors */
+$default_color: #171717;
+$extra_color: #171717;
+$light_color: #171717;
+$white_color: #FFFFFF;
+$active_color: #89AE00;
+$error_color: red;
+
+/* Fonts */
+$default_font: 'Roboto';
+
+/* Fonts Size */
+$default_size: 16px;
+$large_size: 24px;
+$extra_large_size: 24px;
+$small_size: 14px;
+$extra_small_size: 12px;
+
+/* Icons Size */
+$default_icon_size: 36px;
+
+/* Line Height */
+$line_height: 1.5;
+
+/*Mixins*/
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-khtml-border-radius: $radius;
+}
+
+@mixin box-shadow($param) {
+	box-shadow: $param;
+	-moz-box-shadow: $param;
+	-webkit-box-shadow: $param;
+	-khtml-box-shadow: $param;
+}
+
+@mixin transition($param) {
+	transition: $param;
+	-moz-transition: $param;
+	-webkit-transition: $param;
+	-o-transition: $param;
+}
+
+@mixin transform($param) {
+	transform: $param;
+	-webkit-transform: $param;
+	-moz-transform: $param;
+	-o-transform: $param;
+}
