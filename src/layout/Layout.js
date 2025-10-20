@@ -17,93 +17,34 @@ const Layout = ({ children, noHeader }) => {
 
   return (
     <Fragment>
-    {/* Work in Progress Notification */}
-    <div style={{
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  background: 'rgba(255, 255, 255, 0.1)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  borderRadius: '10px',
-  padding: '30px 40px',
-  textAlign: 'center',
-  zIndex: 10000,
-  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-  maxWidth: '800px',
-  width: '90%',
-  color: '#333',
-  fontFamily: 'system-ui, -apple-system, sans-serif'
-}}>
-  <div style={{
-    fontSize: '48px',
-    marginBottom: '15px',
-    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
-  }}>
-    🚧
-  </div>
-  
-  <h2 style={{
-    margin: '0 0 10px 0',
-    fontSize: '24px',
-    fontWeight: '700',
-    background: 'linear-gradient(135deg, #89AE00, #6B8E00)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text'
-  }}>
-    Website Under Construction
-  </h2>
-  
-  <p style={{
-    margin: '0 0 20px 0',
-    fontSize: '16px',
-    color: '#666',
-    lineHeight: '1.5'
-  }}>
-    This website is currently under construction. 
-    Check out my old website while I finish building this one!
-  </p>
-  
-  <a 
-    href="http://richag.cargo.site" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    style={{
-      display: 'inline-block',
-      background: 'linear-gradient(135deg,rgb(213, 213, 213),rgb(61, 61, 61))',
-      color: 'white',
-      textDecoration: 'none',
-      padding: '12px 24px',
-      borderRadius: '25px',
-      fontSize: '16px',
-      fontWeight: '600',
-      transition: 'all 0.3s ease',
-      boxShadow: '0 4px 15px rgba(137, 174, 0, 0.3)',
-      border: 'none',
-      cursor: 'pointer'
-    }}
-    onMouseOver={(e) => {
-      e.target.style.transform = 'translateY(-2px)';
-      e.target.style.boxShadow = '0 6px 20px rgba(137, 174, 0, 0.4)';
-    }}
-    onMouseOut={(e) => {
-      e.target.style.transform = 'translateY(0)';
-      e.target.style.boxShadow = '0 4px 15px rgba(137, 174, 0, 0.3)';
-    }}
-  >
-    Visit Current Portfolio →
-  </a>
-</div>
-    
     <VideoPopup />
       <VideoPopup />
       <ImageView />
       <ImageGallery />
       <ContentModal />
       <Preloader />
+      
+      {/* Website Under Construction Popup */}
+      <div className="construction-popup" id="construction-popup">
+        <div className="construction-content">
+          <div className="construction-icon">
+            <div className="barrier-icon">
+              <div className="barrier-top"></div>
+              <div className="barrier-left"></div>
+              <div className="barrier-right"></div>
+              <div className="barrier-light"></div>
+            </div>
+          </div>
+          <h2>Website Under Construction</h2>
+          <p>This website is currently under construction. Check out my old website while I finish building this one!</p>
+          <button className="construction-button" onClick={() => {
+            window.open('https://richag.cargo.site/', '_blank');
+          }}>
+            Visit Current Portfolio
+            <span className="arrow">→</span>
+          </button>
+        </div>
+      </div>
       {/* Container */}
       <div className="container">
         {/* Header */}

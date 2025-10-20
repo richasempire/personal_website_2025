@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -8,9 +9,10 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      name: "Hybrid Making",
-      category: "Workshop",
-      image: "/images/PhoneMockup1.png"
+      name: "Shore.ai",
+      category: "AI & ML",
+      image: "/images/ShoreaiImage.png",
+      link: "/shoreai"
     },
     {
       id: 2,
@@ -120,13 +122,29 @@ const ProjectsSection = () => {
         <div className={`projects-grid ${isVisible ? 'animate' : ''}`}>
           {filteredProjects.map((project) => (
             <div key={project.id} className="project-card">
-              <div className="project-image">
-                <img src={project.image} alt={project.name} />
-              </div>
-              <div className="project-info">
-                <h3 className="project-name">{project.name}</h3>
-                <p className="project-category">{project.category}</p>
-              </div>
+              {project.link ? (
+                <Link href={project.link}>
+                  <div className="project-link-wrapper">
+                    <div className="project-image">
+                      <img src={project.image} alt={project.name} />
+                    </div>
+                    <div className="project-info">
+                      <h3 className="project-name">{project.name}</h3>
+                      <p className="project-category">{project.category}</p>
+                    </div>
+                  </div>
+                </Link>
+              ) : (
+                <div>
+                  <div className="project-image">
+                    <img src={project.image} alt={project.name} />
+                  </div>
+                  <div className="project-info">
+                    <h3 className="project-name">{project.name}</h3>
+                    <p className="project-category">{project.category}</p>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

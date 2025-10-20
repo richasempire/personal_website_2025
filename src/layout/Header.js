@@ -18,13 +18,13 @@ const Menu = () => (
       <div className="top-menu-nav">
         <div className="menu-topmenu-container">
           <ul className="menu">
-            {/* ✅ Keep only Portfolio */}
-            <li className="menu-item menu-item-has-children">
+            {/* Portfolio button hidden for now */}
+            {/* <li className="menu-item menu-item-has-children">
               <Link href="/portfolio">
                 <span className="mask-lnk">Portfolio</span>
                 <span className="mask-lnk mask-lnk-hover">Portfolio</span>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

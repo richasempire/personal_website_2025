@@ -178,10 +178,17 @@ const HeroIntro = () => {
         <div className="hero-semi-circle"></div>
       )}
 
-      {/* Cycling left text in center of f - only render after final positioning */}
+      {/* Static left text list in center of f - only render after final positioning */}
       {showText && (
-        <div className={`hero-innovation-f ${isLeftTransitioning ? 'fade-out' : 'fade-in'}`}>
-          {leftWords[currentLeftIndex]}
+        <div className="hero-innovation-f-list">
+          {leftWords.map((word, index) => (
+            <div 
+              key={index} 
+              className={`hero-innovation-f-item hero-word-${index}`}
+            >
+              {word}
+            </div>
+          ))}
         </div>
       )}
 
