@@ -24,8 +24,8 @@ const Layout = ({ children, noHeader }) => {
       <ContentModal />
       <Preloader />
       
-      {/* Website Under Construction Popup */}
-      <div className="construction-popup" id="construction-popup">
+      {/* Website Under Construction Popup - Hidden */}
+      {/* <div className="construction-popup" id="construction-popup">
         <div className="construction-content">
           <div className="construction-icon">
             <div className="barrier-icon">
@@ -44,7 +44,7 @@ const Layout = ({ children, noHeader }) => {
             <span className="arrow">→</span>
           </button>
         </div>
-      </div>
+      </div> */}
       {/* Container */}
       <div className="container">
         {/* Header */}

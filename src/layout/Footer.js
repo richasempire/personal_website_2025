@@ -2,20 +2,20 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="copy">
-        <p>E: Richagupta@gmail.com</p>
-        <p>T: +1 (123) 456 78 90</p>
+        <p>E: richag@mit.edu</p>
+        <p>T: +1 (617)780-9005</p>
       </div>
       <div className="soc-box">
-        <div className="follow-label">Follow Me</div>
+        <div className="follow-label">Socials</div>
         <div className="soc">
-          <a target="_blank" rel="noreferrer" href="https://www.pinterest.com/">
-            <span className="icon fab fa-pinterest" />
+          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/richa-gupta-hi">
+            <span className="icon fab fa-linkedin" />
           </a>
-          <a target="_blank" rel="noreferrer" href="https://www.instagram.com/">
+          <a target="_blank" rel="noreferrer" href="https://www.instagram.com/richasempire">
             <span className="icon fab fa-instagram" />
           </a>
-          <a target="_blank" rel="noreferrer" href="https://dribbble.com/">
-            <span className="icon fab fa-dribbble" />
+          <a target="_blank" rel="noreferrer" href="https://scholar.google.com/citations?user=YUHj9zYAAAAJ&hl=en">
+            <span className="icon fas fa-graduation-cap" />
           </a>
         </div>
       </div>
