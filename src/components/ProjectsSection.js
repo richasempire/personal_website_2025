@@ -99,6 +99,16 @@ const ProjectsSection = () => {
 
   return (
     <section className="projects-section" ref={sectionRef}>
+      <div className="projects-section-content">
+      <p> I started in architecture, where I learned to design for how people actually experience spaces. When I got frustrated with the communication gap between designers and clients, I started using AR and VR to let people walk through designs before we built them. That innovation led to me becoming my firm's first design technologist—building tools that connected designers, engineers, and clients.
+At MIT, I went deeper into AI. I didn't just want to build with these models—I wanted to understand how to build them responsibly. I studied red-teaming, pluralistic alignment, and real cases where AI amplified biases. Now I'm a researcher at CSAIL working on human-AI interaction, focused on one question: how do we build systems that expand human agency rather than restrict it?
+I'm unconventional—I speak both technology and design, and I'm driven by creating tools that empower people to achieve things they couldn't before.
+</p>
+      </div>
+      
+      <div className="projects-section-image">
+        <img src="/images/richa_design_tech.jpg" alt="Richa Gupta - Design Technologist" />
+      </div>
       <div className="projects-container">
         {/* Section Title */}
         <div className="projects-title">

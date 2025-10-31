@@ -14,30 +14,31 @@ const HeroIntro = () => {
 
   const technologies = [
     "Emerging technologies",
+    "Artificial Intelligence", 
+    "Generative AI", 
+    "LLM",
+    "VLM",
     "Image generation", 
     "Fine tuning",
     "Metaverse",
-    "LLM",
-    "VLM",
+    
     "Machine learning",
     "Augmented reality",
-    "Virtual reality",
-    "3D geometry",
+    "Virtual reality", "Mixed Reality",
     "Web sockets",
     "Data Visualization",
     "AI Safety",
     "Web 3",
-    "Classification",
     "User strategy",
-    "Image generation"
+  
   ];
 
   const leftWords = [
-    "Challenges",
-    "Responsible", 
     "Innovation",
+    "Responsible", 
     "Democratization",
-    "Interaction"
+    "Real-world Problems",
+    "Human Interaction"
   ];
 
 
@@ -67,9 +68,9 @@ const HeroIntro = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Disable scroll during animation only if in hero section
+  // Disable scroll during animation
   useEffect(() => {
-    if (scrollDisabled && isInHeroSection) {
+    if (scrollDisabled) {
       // Use padding-right to maintain scrollbar space instead of hiding it
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
@@ -83,7 +84,7 @@ const HeroIntro = () => {
       document.body.style.overflow = 'unset';
       document.body.style.paddingRight = '0px';
     };
-  }, [scrollDisabled, isInHeroSection]);
+  }, [scrollDisabled]);
 
   useEffect(() => {
     // Start animation sequence: x -> all-appear -> hold-center -> final-move
@@ -173,23 +174,39 @@ const HeroIntro = () => {
         <img src="/f.svg" alt="f" />
       </div>
 
-      {/* Semi-circle below (x) - appears after (x) moves to final position */}
-      {showSemiCircle && (
-        <div className="hero-semi-circle"></div>
-      )}
-
-      {/* Static left text list in center of f - only render after final positioning */}
+      {/* Static left text list below f - only render after final positioning */}
       {showText && (
         <div className="hero-innovation-f-list">
           {leftWords.map((word, index) => (
-            <div 
-              key={index} 
-              className={`hero-innovation-f-item hero-word-${index}`}
-            >
-              {word}
-            </div>
+            <span key={index}>
+              <span className={`hero-innovation-f-item hero-word-${index}`}>
+                {word}
+              </span>
+              {index < leftWords.length - 1 && (
+                <span className="hero-word-separator">•</span>
+              )}
+            </span>
           ))}
         </div>
+      )}
+      {/* Static left text list below f - only render after final positioning */}
+      {showText && (
+        <div className="hero-innovation-x-list">
+          {technologies.map((word, index) => (
+            <span key={index}>
+              <span className={`hero-innovation-x-item hero-word-${index}`}>
+                {word}
+              </span>
+              {index < technologies.length - 1 && (
+                <span className="hero-word-separator">•</span>
+              )}
+            </span>
+          ))}
+        </div>
+      )}
+      {/* Semi-circle below (x) - appears after (x) moves to final position */}
+      {showSemiCircle && (
+        <div className="hero-semi-circle"></div>
       )}
 
       {/* Cycling technology text in center of x - only render after final positioning */}
@@ -199,6 +216,20 @@ const HeroIntro = () => {
         </div>
       )}
 
+
+      {/* Background technologies text on right side */}
+      {/* {showSemiCircle && (
+        <div className="hero-background-tech">
+          {technologies.map((tech, index) => (
+            <div 
+              key={`${tech}-${index}`} 
+              className="hero-background-tech-item"
+            >
+              {tech}
+            </div>
+          ))}
+        </div>
+      )} */}
 
       {/* Mouse-following cursor - always visible */}
       <div 

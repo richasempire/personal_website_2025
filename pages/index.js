@@ -22,9 +22,9 @@ const Index = () => {
         </div>
       </div>
       
-      <AboutSection />
+      {/* <AboutSection /> */}
       <ProjectsSection />
-      <CollaborateSection />
+      {/* <CollaborateSection /> */}
       <LetsTalkSection />
     </Layout>
   );
