@@ -1884,7 +1884,7 @@ img.mfp-img {
 
 .projects-title h2 .ideas {
   font-family: 'Playfair Display', serif;
-  color: #89AE00;
+  color: #aaa540;
   font-weight: 500;
   font-style: italic;
 }
@@ -1911,13 +1911,13 @@ img.mfp-img {
 }
 
 .filter-button:hover {
-  border-color: #A8D08D;
-  color: #A8D08D;
+  border-color: #aaa540;
+  color: #aaa540;
 }
 
 .filter-button.active {
-  background: #A8D08D;
-  border-color: #A8D08D;
+  background: #aaa540;
+  border-color: #aaa540;
   color: #000000;
 }
 
@@ -2028,7 +2028,7 @@ img.mfp-img {
   content: '';
   position: absolute;
   z-index: -1;
-  background: #A8D08D;
+  background: #aaa540;
   height: 20px;
   left: 0;
   bottom: -10px;
@@ -2428,7 +2428,7 @@ img.mfp-img {
 }
 
 .badge-text {
-  background: #89AE00;
+  background: #aaa540;
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
@@ -2481,12 +2481,12 @@ img.mfp-img {
 }
 
 .project-link.primary {
-  background: #89AE00;
+  background: #aaa540;
   color: white;
 }
 
 .project-link.primary:hover {
-  background: #7A9A00;
+  background: #aaa540;
   transform: translateY(-2px);
 }
 
