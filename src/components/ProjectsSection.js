@@ -117,11 +117,8 @@ const ProjectsSection = () => {
   return (
     <section className="projects-section" ref={sectionRef}>
       <div className="projects-section-content">
-      <p> Starting in architecture meant learning to read context and clients - understanding what they needed, then designing innovative spaces that made those needs real. Frustration with the communication gap between designers and clients led to using AR, VR and other technologies to let people walk through designs before building them. That innovation created a new role - the firm's first design technologist - building tools that connected designers, engineers and clients.
-
-At MIT, the focus shifted deeper into AI. Not just building with these models, but understanding how to build them responsibly. Studies in red-teaming, pluralistic alignment, and real cases where AI amplified biases shaped a research position at CSAIL working on human-AI interaction, focused on one question: how do we build systems that expand human agency rather than restrict it?
-
-The approach is unconventional - speaking both technology and design, driven by creating tools and technologies that empower people to achieve things they could not before.
+      <p>
+  {"Starting in architecture meant learning to read context and clients - understanding what they needed, then designing innovative spaces that made those needs real. Frustration with the communication gap between designers and clients led to using AR, VR and other technologies to let people walk through designs before building them. That innovation created a new role - the firm's first design technologist - building tools that connected designers, engineers and clients. At MIT, the focus shifted deeper into AI. Not just building with these models, but understanding how to build them responsibly. Studies in red-teaming, pluralistic alignment, and real cases where AI amplified biases shaped a research position at CSAIL working on human-AI interaction, focused on one question: how do we build systems that expand human agency rather than restrict it? The approach is unconventional - speaking both technology and design, driven by creating tools and technologies that empower people to achieve things they could not before."}
 </p>
       </div>
       

@@ -148,7 +148,9 @@ export default function LetsTalkSection() {
             transition={{ delay: 5, duration: 1 }}
             className="fx-ending-cta"
           >
-            <a className="fx-email-link" href="mailto:richag@mit.edu">Let's build f(x) together</a>
+            <a className="fx-email-link" href="mailto:richag@mit.edu">
+  {"Let's build f(x) together"}
+</a>
           </motion.div>
         )}
       </div>
