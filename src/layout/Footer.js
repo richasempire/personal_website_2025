@@ -4,6 +4,16 @@ const Footer = () => {
       <div className="copy">
         <p>E: richag@mit.edu</p>
         <p>T: +1 (617)780-9005</p>
+        <p>
+          <a 
+            href="http://richag.cargo.site" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="old-website-link"
+          >
+            Old Website
+          </a>
+        </p>
       </div>
       <div className="soc-box">
         <div className="follow-label">Socials</div>

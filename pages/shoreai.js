@@ -3,7 +3,7 @@ import Lottie from 'lottie-react';
 import Shoreailogo from '../src/animations/Shoreailogo.json';
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const ShoreaiPage = () => {
   const lottieRef = useRef();
@@ -25,7 +25,7 @@ const ShoreaiPage = () => {
       { threshold: 0.5 }
     );
 
-    const logoContainer = document.querySelector('.shoreai-logo-container');
+    const logoContainer = document.querySelector('.hero-logo-container');
     if (logoContainer) {
       observer.observe(logoContainer);
     }
@@ -307,15 +307,41 @@ const ShoreaiPage = () => {
         {/* Hero Section */}
         <section className="shoreai-hero">
           <div className="shoreai-hero-content">
-            <div className="quote-background">
-              <img src="/images/Quotes.svg" alt="Quote mark" className="quote-mark" />
+            {/* Left 2/3 - Quote */}
+            <div className="hero-left-section">
+              <div className="quote-background">
+                <img src="/images/Quotes.svg" alt="Quote mark" className="quote-mark" />
+              </div>
+              <div className="quote-text">
+                <p className="hero-quote">
+                  The future of career<br/>
+                  success is human connection,<br/>
+                  not algorithms.
+                </p>
+              </div>
             </div>
-            <div className="quote-text">
-              <p className="hero-quote">
-                The future of career<br/>
-                success is human connection,<br/>
-                not algorithms.
-              </p>
+            
+            {/* Right 1/3 - Logo, Name, and Tags */}
+            <div className="hero-right-section">
+              <div className="hero-logo-container">
+                <Lottie
+                  lottieRef={lottieRef}
+                  animationData={Shoreailogo}
+                  loop={false}
+                  autoplay={false}
+                  className="hero-logo-animation"
+                />
+              </div>
+              
+              <h1 className="hero-shoreai-title">Shore.ai</h1>
+              <div className="hero-shoreai-tags">
+                <span className="shoreai-tag">#ProductDesign</span>
+                <span className="shoreai-tag">#TechForHumans</span>
+                <span className="shoreai-tag">#DesignThinking</span>
+                <span className="shoreai-tag">#InteractionDesign</span>
+                <span className="shoreai-tag">#UXDesign</span>
+                <span className="shoreai-tag">#UIDesign</span>
+              </div>
             </div>
           </div>
         </section>

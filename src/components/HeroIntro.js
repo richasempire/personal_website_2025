@@ -137,6 +137,11 @@ const HeroIntro = () => {
 
   return (
     <div className={`hero-intro ${phase}`}>
+      {/* Small text above f(x) */}
+      <div className="hero-design-for">
+        I design for
+      </div>
+
       {/* Static f(x) display */}
       <div className="hero-fx" style={{
         margin: 0,
