@@ -1,5 +1,69 @@
-/* Temporarily hide Market Analysis section on Shore.ai */
-.market-analysis-section { display: none; }
+/* Iceberg full-viewport section (Shore.ai) */
+.iceberg-section {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: url('/images/Iceberg%20Section.svg') center / cover no-repeat;
+}
+.iceberg-section .iceberg-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Market Analysis (Shore.ai) - Background image and three columns */
+.market-analysis-section {
+  background: url('/images/MarketAnalysis Background.jpg') center / cover no-repeat;
+  padding: 80px 40px 60px 40px;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+.market-analysis-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+.market-heading {
+  font-family: Arial, sans-serif;
+  font-size: clamp(28px, 4vw, 64px);
+  font-weight: 600;
+  color: #171717;
+  margin: 0 0 30px 0;
+  line-height: 1.05;
+}
+.market-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  position: relative;
+  align-items: stretch;
+}
+/* subtle dividers between columns (like hairlines) */
+.market-columns .market-col + .market-col { border-left: 1px solid rgba(0,0,0,0.12); padding-left: 40px; }
+
+.market-col { display: flex; flex-direction: column; }
+.market-col-title { font-size: 28px; font-weight: 700; color: #171717; letter-spacing: 0.01em; }
+.market-col-sub { margin-top: 4px; font-size: 16px; color: #555; }
+.market-col-desc { margin: 24px 0 18px 0; font-size: 20px; line-height: 1.5; color: #333; }
+.market-col-figs { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; margin-top: auto; }
+.market-fig { font-size: clamp(36px, 5vw, 72px); font-weight: 700; color: #9aa350; letter-spacing: 0.01em; line-height: 1; }
+.market-fig-alt { font-size: clamp(28px, 4vw, 60px); font-weight: 700; color: #9aa350; opacity: 0.9; line-height: 1; }
+
+.market-footnote-inline {
+  margin-top: auto;
+  padding-top: 24px;
+  text-align: center;
+  font-size: 22px;
+  color: #1a1a1a;
+}
+
+@media (max-width: 1024px) {
+  .market-columns { grid-template-columns: 1fr; gap: 28px; }
+  .market-columns .market-col + .market-col { border-left: none; padding-left: 0; border-top: 1px solid rgba(0,0,0,0.12); padding-top: 28px; }
+}
 /* Mode Toggle (Human/Machine) */
 .mode-toggle {
   display: inline-flex;
@@ -319,7 +383,7 @@ img.mfp-img {
   z-index: 20;
 }
 .hero-intro .hero-fx .hero-brackets {
-  font-size: 300px;
+  font-size: 500px;
   color: #171717;
   opacity: 0;
   transition: opacity 0.5s ease, color 1.2s ease;
@@ -328,7 +392,7 @@ img.mfp-img {
   font-weight: 300;
 }
 .hero-intro .hero-fx .hero-x-initial {
-  font-size: 420px;
+  font-size: 650px;
   color: #171717;
   opacity: 1;
   font-weight: 300;
@@ -1518,9 +1582,22 @@ img.mfp-img {
 .header .top-menu .menu .menu-item .mask-lnk-hover,
 .header .logo a,
 .header .logo strong {
-
   color: #ffffff !important;
   mix-blend-mode: difference;
+}
+
+/* Portfolio pages (Shore.ai, etc.): header visible on light backgrounds */
+.portfolio-page .header { 
+  mix-blend-mode: normal !important; 
+  background: transparent !important; 
+}
+.portfolio-page .header .top-menu .menu .menu-item a,
+.portfolio-page .header .top-menu .menu .menu-item .mask-lnk,
+.portfolio-page .header .top-menu .menu .menu-item .mask-lnk-hover,
+.portfolio-page .header .logo a,
+.portfolio-page .header .logo strong { 
+  color: #111111 !important; 
+  mix-blend-mode: normal !important; 
 }
 
 /* Collaborate Section */
@@ -1934,8 +2011,8 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 }
 
 /* Hero responsive overrides */
-.hero-intro .hero-x-initial { font-size: clamp(220px, 12vw, 550px) !important; }
-.hero-intro .hero-brackets { font-size: clamp(200px, 11vw, 500px) !important; }
+.hero-intro .hero-x-initial { font-size: clamp(220px, 12vw, 650px); }
+.hero-intro .hero-brackets { font-size: clamp(200px, 11vw, 500px); }
 
 @media (max-width: 1200px) {
   .hero-intro .hero-f { left: 24%; top: 52%; }
@@ -2483,7 +2560,7 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
     max-width: 100%;
     margin-left: 120px;
     margin-top: 0;
-    padding-top: 40px;
+    padding-top: 0px; /* move text upward a bit */
   }
 
   .hero-quote {

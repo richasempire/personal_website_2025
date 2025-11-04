@@ -157,7 +157,7 @@ const HeroIntro = () => {
           fontWeight: '300'
         }}>(</span>
         <span className="hero-x-initial" style={{
-          fontSize: "550px",
+          fontSize: "650px",
           margin: 0,
           padding: 0,
           lineHeight: 1

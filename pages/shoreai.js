@@ -344,6 +344,11 @@ const ShoreaiPage = () => {
           </div>
         </section>
 
+        {/* Iceberg Section (full viewport) */}
+        <section className="iceberg-section">
+          <img src="/images/Iceberg%20Section.svg" alt="Iceberg graphic" className="iceberg-image" />
+        </section>
+
         {/* Intro section removed per request */}
 
         {/* Building Connections Section */}
@@ -371,6 +376,43 @@ const ShoreaiPage = () => {
                 <p className="feature-description">Behavioral insights and AI-driven suggestions support meaningful, personalized interactions.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Market Analysis Section (three-column SOM/SAM/TAM) */}
+        <section className="market-analysis-section">
+          <div className="market-analysis-inner">
+            <h2 className="market-heading">Market Analysis<br />&amp; Estimated Market Capture</h2>
+            <div className="market-columns">
+              <div className="market-col">
+                <div className="market-col-title">SOM</div>
+                <div className="market-col-sub">Serviceable Obtainable Market</div>
+                <p className="market-col-desc">20% of U.S. Individuals Under 30 Job Searching or Planning Job Changes Within 04 Years</p>
+                <div className="market-col-figs">
+                  <div className="market-fig">$ 5M</div>
+                  <div className="market-fig-alt">120M</div>
+                </div>
+              </div>
+              <div className="market-col">
+                <div className="market-col-title">SAM</div>
+                <div className="market-col-sub">Service Addressable Market</div>
+                <p className="market-col-desc">Gen Z &amp; Millenials<br />on LinkedIn in US</p>
+                <div className="market-col-figs">
+                  <div className="market-fig">$ 84M</div>
+                  <div className="market-fig-alt">2B</div>
+                </div>
+              </div>
+              <div className="market-col">
+                <div className="market-col-title">TAM</div>
+                <div className="market-col-sub">Total Addressable Market</div>
+                <p className="market-col-desc">People looking and spending for Job in US per year</p>
+                <div className="market-col-figs">
+                  <div className="market-fig">$ 148M</div>
+                  <div className="market-fig-alt">315B</div>
+                </div>
+              </div>
+            </div>
+            <div className="market-footnote-inline">Forecasted Network Effect</div>
           </div>
         </section>
 
@@ -428,45 +470,6 @@ const ShoreaiPage = () => {
                   <p className="showcase-description">By cultivating a trusted network, users can tap into roles often unavailable through traditional job portals.</p>
                 </div>
                 <div className="vertical-line"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Market Analysis Section */}
-        <section className="market-analysis-section">
-          <div className="market-analysis-content">
-            <div className="market-left">
-              <h2 className="market-title">Market Analysis and Estimated Market Capture</h2>
-              <div className="market-bar">People looking and spending for Job in US per year</div>
-              <div className="market-bar">Gen Z & Millenials on LinkedIn in US</div>
-              <div className="market-bar">20% of U.S. Individuals Under 30 Job Searching or Planning Job Changes Within 04 Years</div>
-            </div>
-            <div className="market-right">
-              <div className="circle circle-tam">
-                <div className="circle-label">
-                  <div className="circle-tag">TAM</div>
-                  <div className="circle-num">148 M</div>
-                  <div className="circle-val">$ 315 B</div>
-                </div>
-              </div>
-              <div className="circle circle-sam">
-                <div className="circle-label">
-                  <div className="circle-tag">SAM</div>
-                  <div className="circle-num">84 M</div>
-                  <div className="circle-val">$ 2 B</div>
-                </div>
-              </div>
-              <div className="circle circle-som">
-                <div className="circle-label">
-                  <div className="circle-tag">SOM</div>
-                  <div className="circle-num">5 M</div>
-                  <div className="circle-val">$ 120 M</div>
-                </div>
-              </div>
-              <div className="market-footnote">
-                <div className="footnote-title">Forecasted</div>
-                <div className="footnote-sub">Network Effect</div>
               </div>
             </div>
           </div>
