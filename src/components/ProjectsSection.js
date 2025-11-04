@@ -10,32 +10,32 @@ const ProjectsSection = () => {
     {
       id: 1,
       name: "Shore.ai",
-      category: "AI & ML",
-      image: "/images/ShoreaiImage.png",
+      category: "Product",
+      image: "/images/Shore AI.jpg",
       link: "/shoreai",
       external: false
     },
     {
       id: 2,
       name: "Vision Adapters",
-      category: "ML & AI",
-      image: "/images/PhoneMockup1.png",
+      category: "AI & ML",
+      image: "/images/Vision Adapters.jpg",
       link: "https://letschec.my.canva.site/corbu-inc",
       external: true
     },
     {
       id: 3,
       name: "Text to Robotic Assembly",
-      category: "AI & ML, Design",
-      image: "/images/PhoneMockup1.png",
+      category: "AI & ML, Research",
+      image: "/images/Text to Robotic.jpg",
       link: "https://letschec.my.canva.site/text-to-roboticassembly",
       external: true
     },
     {
       id: 4,
       name: "Sketch-to-BIM",
-      category: "Product, Design, AI & ML",
-      image: "/images/PhoneMockup1.png",
+      category: "Product, AI & ML",
+      image: "/images/Sketch to BIM.jpg",
       link: "https://letschec.my.canva.site/sketchtobimm",
       external: true
     },
@@ -43,15 +43,15 @@ const ProjectsSection = () => {
       id: 5,
       name: "ArchiDAO",
       category: "Entrepreneurship, Web3",
-      image: "/images/PhoneMockup1.png",
+      image: "/images/ArchiDAO.jpg",
       link: "https://example.com/archidao",
       external: true
     },
     {
       id: 6,
       name: "Curator AI",
-      category: "Product, Design, AI & ML",
-      image: "/images/PhoneMockup1.png",
+      category: "Product, AI & ML",
+      image: "/images/Curator.jpg",
       link: "https://letschec.my.canva.site/curatorai",
       external: true
     },
@@ -59,23 +59,15 @@ const ProjectsSection = () => {
       id: 7,
       name: "PLUS",
       category: "Product, Entrepreneurship",
-      image: "/images/PhoneMockup1.png",
+      image: "/images/Plus.jpg",
       link: "https://plus-ai-demo.vercel.app/",
-      external: true
-    },
-    {
-      id: 8,
-      name: "Networking App",
-      category: "Product, Design",
-      image: "/images/PhoneMockup1.png",
-      link: "https://example.com/networking-app",
       external: true
     },
     {
       id: 9,
       name: "Bike Design Completion",
       category: "AI & ML",
-      image: "/images/PhoneMockup1.png",
+      image: "/images/Bike Design Completion.jpg",
       link: "https://letschec.my.canva.site/bike-design-inpainting",
       external: true
     }
@@ -91,6 +83,41 @@ const ProjectsSection = () => {
 
   // Intersection Observer for scroll-triggered animation
   useEffect(() => {
+    const checkVisibility = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        // Check if section is in viewport or close to it
+        const isInView = rect.top < window.innerHeight * 1.5 && rect.bottom > -100;
+        if (isInView) {
+          setIsVisible(true);
+        }
+      }
+    };
+
+    // Wait for preloader to finish, then check visibility
+    const checkAfterPreloader = () => {
+      const preloader = document.querySelector('.preloader');
+      if (!preloader || preloader.style.display === 'none') {
+        // Small delay to ensure DOM is ready
+        setTimeout(checkVisibility, 200);
+        return true;
+      }
+      return false;
+    };
+
+    // Check immediately
+    if (!checkAfterPreloader()) {
+      // If preloader is still there, check periodically
+      const preloaderCheck = setInterval(() => {
+        if (checkAfterPreloader()) {
+          clearInterval(preloaderCheck);
+        }
+      }, 100);
+      
+      // Cleanup after 5 seconds max
+      setTimeout(() => clearInterval(preloaderCheck), 5000);
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -98,8 +125,8 @@ const ProjectsSection = () => {
         }
       },
       {
-        threshold: 0.3,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.1, // Lower threshold to trigger earlier
+        rootMargin: '200px 0px 0px 0px' // Trigger when section is 200px above viewport
       }
     );
 
@@ -113,6 +140,24 @@ const ProjectsSection = () => {
       }
     };
   }, []);
+
+  // Also trigger visibility when filter changes (in case projects were hidden)
+  useEffect(() => {
+    const checkVisibility = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        // Check if section is in viewport or close to it
+        const isInView = rect.top < window.innerHeight * 1.5 && rect.bottom > -100;
+        if (isInView) {
+          setIsVisible(true);
+        }
+      }
+    };
+    
+    // Small delay to ensure DOM has updated after filter change
+    const timeoutId = setTimeout(checkVisibility, 50);
+    return () => clearTimeout(timeoutId);
+  }, [activeFilter]);
 
   return (
     <section className="projects-section" ref={sectionRef}>

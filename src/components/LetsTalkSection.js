@@ -122,7 +122,21 @@ export default function LetsTalkSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.5 }}
             >
-              <span className="fx-bracket">x</span> is <span className="fx-highlight">us</span>
+              <span className="fx-bracket">x</span>{' '}
+              <motion.span 
+                className="fx-bracket"
+                animate={{ 
+                  opacity: [0, 1, 0]
+                }}
+                transition={{ 
+                  duration: 15,
+                  repeat: Infinity, 
+                  ease: 'easeInOut' 
+                }}
+              >
+                is
+              </motion.span>{' '}
+              <span className="fx-bracket">us</span>
             </motion.h1>
           )}
 
@@ -154,16 +168,6 @@ export default function LetsTalkSection() {
           </motion.div>
         )}
       </div>
-
-      {/* Subtle pulse aura */}
-      {isVisible && (
-        <motion.div
-          className="fx-pulse-aura"
-          initial={{ scale: 0.9, opacity: 0.05 }}
-          animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.05, 0.15, 0.05] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      )}
     </section>
   );
 }

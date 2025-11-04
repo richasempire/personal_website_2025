@@ -324,16 +324,8 @@ const ShoreaiPage = () => {
             {/* Right 1/3 - Logo, Name, and Tags */}
             <div className="hero-right-section">
               <div className="hero-logo-container">
-                <Lottie
-                  lottieRef={lottieRef}
-                  animationData={Shoreailogo}
-                  loop={false}
-                  autoplay={false}
-                  className="hero-logo-animation"
-                />
+                <img src="/images/ShoreAI Internal.jpg" alt="Shore.ai devices" className="shoreai-hero-image" />
               </div>
-              
-              <h1 className="hero-shoreai-title">Shore.ai</h1>
               <div className="hero-shoreai-tags">
                 <span className="shoreai-tag">#ProductDesign</span>
                 <span className="shoreai-tag">#TechForHumans</span>
@@ -342,52 +334,17 @@ const ShoreaiPage = () => {
                 <span className="shoreai-tag">#UXDesign</span>
                 <span className="shoreai-tag">#UIDesign</span>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Shore.ai Intro Section */}
-        <section className="shoreai-intro-section">
-          <div className="shoreai-layout">
-            {/* Left side - Title and tags */}
-            <div className="shoreai-left-panel">
-              <h1 className="shoreai-title">
-                Shore.ai
-              </h1>
-              <div className="shoreai-tags">
-                <span className="shoreai-tag">#ProductDesign</span>
-                <span className="shoreai-tag">#TechForHumans</span>
-                <span className="shoreai-tag">#DesignThinking</span>
-                <span className="shoreai-tag">#InteractionDesign</span>
-                <span className="shoreai-tag">#UXDesign</span>
-                <span className="shoreai-tag">#UIDesign</span>
-              </div>
-            </div>
-            
-            {/* Center - Gray square with logo */}
-            <div className="shoreai-center-panel">
-              <div className="shoreai-logo-container">
-                <Lottie
-                  lottieRef={lottieRef}
-                  animationData={Shoreailogo}
-                  loop={false}
-                  autoplay={false}
-                  className="shoreai-logo-animation"
-                  style={{ width: 500, height: 500 }}
-                />
-              </div>
-            </div>
-            
-            {/* Right side - Description text */}
-            <div className="shoreai-right-panel">
-              <p className="shoreai-description">
+              <h1 className="hero-shoreai-title">Shore.ai</h1>
+              <p className="shoreai-description" style={{ maxWidth: '520px', textAlign: 'left' }}>
                 Not another job board. A platform that teaches people how to network like it matters, with clarity, purpose, and measurable growth.
                 <br /><br />
-                A goal-driven networking platform that reframes how young professionals think about success. Instead of chasing listings and waiting for referrals, users are encouraged to build and maintain authentic relationships that lead to long-term opportunities. From AI-assisted communication to goal tracking and visual network maps, it turns professional connection into a skill, not luck.
+                A goal-driven networking platform that reframes how young professionals think about success. From AI-assisted communication to goal tracking and visual network maps, it turns professional connection into a skill, not luck.
               </p>
             </div>
           </div>
         </section>
+
+        {/* Intro section removed per request */}
 
         {/* Building Connections Section */}
         <section className="building-connections-section">
@@ -471,6 +428,45 @@ const ShoreaiPage = () => {
                   <p className="showcase-description">By cultivating a trusted network, users can tap into roles often unavailable through traditional job portals.</p>
                 </div>
                 <div className="vertical-line"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Market Analysis Section */}
+        <section className="market-analysis-section">
+          <div className="market-analysis-content">
+            <div className="market-left">
+              <h2 className="market-title">Market Analysis and Estimated Market Capture</h2>
+              <div className="market-bar">People looking and spending for Job in US per year</div>
+              <div className="market-bar">Gen Z & Millenials on LinkedIn in US</div>
+              <div className="market-bar">20% of U.S. Individuals Under 30 Job Searching or Planning Job Changes Within 04 Years</div>
+            </div>
+            <div className="market-right">
+              <div className="circle circle-tam">
+                <div className="circle-label">
+                  <div className="circle-tag">TAM</div>
+                  <div className="circle-num">148 M</div>
+                  <div className="circle-val">$ 315 B</div>
+                </div>
+              </div>
+              <div className="circle circle-sam">
+                <div className="circle-label">
+                  <div className="circle-tag">SAM</div>
+                  <div className="circle-num">84 M</div>
+                  <div className="circle-val">$ 2 B</div>
+                </div>
+              </div>
+              <div className="circle circle-som">
+                <div className="circle-label">
+                  <div className="circle-tag">SOM</div>
+                  <div className="circle-num">5 M</div>
+                  <div className="circle-val">$ 120 M</div>
+                </div>
+              </div>
+              <div className="market-footnote">
+                <div className="footnote-title">Forecasted</div>
+                <div className="footnote-sub">Network Effect</div>
               </div>
             </div>
           </div>
