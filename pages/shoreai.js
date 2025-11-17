@@ -345,9 +345,7 @@ const ShoreaiPage = () => {
         </section>
 
         {/* Iceberg Section (full viewport) */}
-        <section className="iceberg-section">
-          <img src="/images/Iceberg%20Section.svg" alt="Iceberg graphic" className="iceberg-image" />
-        </section>
+        <section className="iceberg-section" aria-label="Iceberg graphic"></section>
 
         {/* Intro section removed per request */}
 
@@ -555,6 +553,68 @@ const ShoreaiPage = () => {
                 <div className="timeframe">5-10<br />years</div>
               </div>
             </div>
+
+            {/* Mobile specific roadmap */}
+            <div className="roadmap-mobile">
+              <div className="roadmap-mobile-row">
+                <div className="roadmap-mobile-cell tone-1">
+                  <div className="roadmap-mobile-heading">Launch</div>
+                  <div className="roadmap-mobile-subheading">Multi-Lingual</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-2">
+                  <div className="roadmap-mobile-heading">Launch</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-3">
+                  <div className="roadmap-mobile-heading">Launch</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-4">
+                  <div className="roadmap-mobile-heading">Launch</div>
+                </div>
+              </div>
+
+              <div className="roadmap-mobile-row">
+                <div className="roadmap-mobile-cell tone-5">
+                  <div className="roadmap-mobile-heading">Alumni-network</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-6">
+                  <div className="roadmap-mobile-heading">Mobile Connect</div>
+                  <div className="roadmap-mobile-subheading">Facial Recognition</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-7">
+                  <div className="roadmap-mobile-heading">VR Coffees</div>
+                  <div className="roadmap-mobile-subheading">Virtual Personas</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-8">
+                  <div className="roadmap-mobile-heading">VR micro-communities</div>
+                </div>
+              </div>
+
+              <div className="roadmap-mobile-row">
+                <div className="roadmap-mobile-cell tone-9">
+                  <div className="roadmap-mobile-heading">Release in universities</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-10">
+                  <div className="roadmap-mobile-heading">Freshers &amp; HR</div>
+                  <div className="roadmap-mobile-subheading">United States</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-11">
+                  <div className="roadmap-mobile-heading">VCs and Startups</div>
+                  <div className="roadmap-mobile-subheading">India and China</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-12">
+                  <div className="roadmap-mobile-heading">Friendship &amp; Dating</div>
+                  <div className="roadmap-mobile-subheading">All around the world</div>
+                </div>
+              </div>
+
+              <div className="roadmap-mobile-row timeframe-row">
+                <div className="roadmap-mobile-cell tone-timeline">&lt;1<br />Year</div>
+                <div className="roadmap-mobile-cell tone-timeline">1-2<br />years</div>
+                <div className="roadmap-mobile-cell tone-timeline">3-5<br />years</div>
+                <div className="roadmap-mobile-cell tone-timeline">5-10<br />years</div>
+              </div>
+            </div>
+
           </div>
         </section>
 

@@ -3,5 +3,6 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/": "pages/index.js",
+  "/ai/shoreai": "pages/ai/shoreai.js",
   "/shoreai": "pages/shoreai.js"
 }

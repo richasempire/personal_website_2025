@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import useWindowSize from '../useWindowSize';
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isVisible, setIsVisible] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const sectionRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const windowSize = useWindowSize();
+  const isMobile = windowSize.width <= 768;
 
   const projects = [
     {
@@ -159,6 +164,28 @@ const ProjectsSection = () => {
     return () => clearTimeout(timeoutId);
   }, [activeFilter]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
+  const handleFilterChange = (category) => {
+    setActiveFilter(category);
+    setIsDropdownOpen(false);
+  };
+
   return (
     <section className="projects-section" ref={sectionRef}>
       <div className="projects-section-content">
@@ -168,7 +195,11 @@ const ProjectsSection = () => {
       </div>
       
       <div className="projects-section-image">
-        <img src="/images/richa_design_tech.jpg" alt="Richa Gupta - Design Technologist" />
+        {isMobile ? (
+          <img src="/images/Richa Design Mobile.png" alt="Richa Gupta - Design Technologist" />
+        ) : (
+          <img src="/images/richa_design_tech.jpg" alt="Richa Gupta - Design Technologist" />
+        )}
       </div>
       <div className="projects-container">
         {/* Section Title */}
@@ -176,8 +207,8 @@ const ProjectsSection = () => {
           <h2>The <span className="ideas">Interface</span> of Ideas</h2>
         </div>
         
-        {/* Category Filter */}
-        <div className="projects-filter">
+        {/* Category Filter - Desktop */}
+        <div className="projects-filter projects-filter-desktop">
           {categories.map((category) => (
             <button
               key={category}
@@ -187,6 +218,36 @@ const ProjectsSection = () => {
               {category}
             </button>
           ))}
+        </div>
+
+        {/* Category Filter - Mobile Dropdown */}
+        <div className="projects-filter-mobile" ref={dropdownRef}>
+          <div className="custom-dropdown">
+            <button
+              className="custom-dropdown-button"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <span className="custom-dropdown-selected">{activeFilter}</span>
+              <span className={`custom-dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}>
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            {isDropdownOpen && (
+              <div className="custom-dropdown-menu">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    className={`custom-dropdown-item ${activeFilter === category ? 'active' : ''}`}
+                    onClick={() => handleFilterChange(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Projects Grid */}

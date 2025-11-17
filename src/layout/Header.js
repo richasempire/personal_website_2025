@@ -1,34 +1,5 @@
 import Link from "next/link";
-import { Fragment, useEffect, useState } from "react";
-
-const ModeToggle = () => {
-  const [mode, setMode] = useState('human');
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const saved = window.localStorage.getItem('siteMode');
-    const initial = saved === 'machine' ? 'machine' : 'human';
-    setMode(initial);
-    document.body.setAttribute('data-mode', initial);
-  }, []);
-
-  const toggleMode = () => {
-    const next = mode === 'human' ? 'machine' : 'human';
-    setMode(next);
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem('siteMode', next);
-    }
-    document.body.setAttribute('data-mode', next);
-  };
-
-  return (
-    <button className={`mode-toggle ${mode}`} onClick={toggleMode} aria-label="Toggle Human/Machine mode">
-      <span className="label">Human</span>
-      <span className={`switch`} />
-      <span className="label">Machine</span>
-    </button>
-  );
-};
+import { Fragment } from "react";
 
 const Menu = () => (
   <Fragment>
@@ -73,26 +44,18 @@ export default Header;
 
 const DeskTopHeader = () => (
   <header className={`header desktopHeader`}>
-    <div className="head-top" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+    <div className="head-top">
       <Menu />
-      <ModeToggle />
     </div>
   </header>
 );
 
 const MobileHeader = () => {
-  const [toggle, setToggle] = useState(false);
-
   return (
-    <header className={`header mobileHeader ${toggle ? "active" : ""}`}>
-      <div className="head-top" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* menu button */}
-        <a href="#" className="menu-btn" onClick={() => setToggle(!toggle)}>
-          <span />
-        </a>
+    <header className="header mobileHeader">
+      <div className="head-top">
         {/* logo */}
         <Menu />
-        <ModeToggle />
       </div>
     </header>
   );

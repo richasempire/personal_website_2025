@@ -25,10 +25,10 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/shoreai": [
+    "/ai/shoreai": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/shoreai.js"
+      "static/chunks/pages/ai/shoreai.js"
     ]
   },
   "ampFirstPages": []
