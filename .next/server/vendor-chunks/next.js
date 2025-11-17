@@ -1474,6 +1474,7 @@ eval("module.exports = __webpack_require__(/*! ./dist/shared/lib/head */ \"(page
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__(/*! ./dist/client/link */ \"(pages-dir-node)/./node_modules/next/dist/client/link.js\")\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHBhZ2VzLWRpci1ub2RlKS8uL25vZGVfbW9kdWxlcy9uZXh0L2xpbmsuanMiLCJtYXBwaW5ncyI6IkFBQUEsMEhBQThDIiwic291cmNlcyI6WyJDOlxcVGVtcCBQcm9qZWN0c1xcQmFja3Vwc1xcMDJcXHBlcnNvbmFsX3dlYnNpdGVfMjAyNVxcbm9kZV9tb2R1bGVzXFxuZXh0XFxsaW5rLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gcmVxdWlyZSgnLi9kaXN0L2NsaWVudC9saW5rJylcbiJdLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOlswXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(pages-dir-node)/./node_modules/next/link.js\n");
+<<<<<<< HEAD
 
 /***/ }),
 
@@ -2470,6 +2471,18 @@ eval("module.exports = __webpack_require__(/*! ./dist/pages/_document */ \"./nod
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__(/*! ./dist/shared/lib/head */ \"./node_modules/next/dist/shared/lib/head.js\")\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9ub2RlX21vZHVsZXMvbmV4dC9oZWFkLmpzIiwibWFwcGluZ3MiOiJBQUFBLGlIQUFrRCIsInNvdXJjZXMiOlsiQzpcXFRlbXAgUHJvamVjdHNcXEJhY2t1cHNcXDAyXFxwZXJzb25hbF93ZWJzaXRlXzIwMjVcXG5vZGVfbW9kdWxlc1xcbmV4dFxcaGVhZC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoJy4vZGlzdC9zaGFyZWQvbGliL2hlYWQnKVxuIl0sIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6WzBdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./node_modules/next/head.js\n");
+=======
+
+/***/ }),
+
+/***/ "(pages-dir-node)/./node_modules/next/router.js":
+/*!*************************************!*\
+  !*** ./node_modules/next/router.js ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! ./dist/client/router */ \"(pages-dir-node)/./node_modules/next/dist/client/router.js\")\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHBhZ2VzLWRpci1ub2RlKS8uL25vZGVfbW9kdWxlcy9uZXh0L3JvdXRlci5qcyIsIm1hcHBpbmdzIjoiQUFBQSw4SEFBZ0QiLCJzb3VyY2VzIjpbIkM6XFxUZW1wIFByb2plY3RzXFxCYWNrdXBzXFwwMlxccGVyc29uYWxfd2Vic2l0ZV8yMDI1XFxub2RlX21vZHVsZXNcXG5leHRcXHJvdXRlci5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoJy4vZGlzdC9jbGllbnQvcm91dGVyJylcbiJdLCJuYW1lcyI6W10sImlnbm9yZUxpc3QiOlswXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(pages-dir-node)/./node_modules/next/router.js\n");
+>>>>>>> 58353e637f458e56900d80ce6af4bce09020e42a
 
 /***/ })
 

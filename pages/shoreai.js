@@ -554,6 +554,7 @@ const ShoreaiPage = () => {
               </div>
             </div>
 
+<<<<<<< HEAD
             {/* Mobile specific roadmap */}
             <div className="roadmap-mobile">
               <div className="roadmap-mobile-row">
@@ -615,6 +616,8 @@ const ShoreaiPage = () => {
               </div>
             </div>
 
+=======
+>>>>>>> 58353e637f458e56900d80ce6af4bce09020e42a
           </div>
         </section>
 
