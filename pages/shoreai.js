@@ -555,6 +555,7 @@ const ShoreaiPage = () => {
                 <div className="timeframe">5-10<br />years</div>
               </div>
             </div>
+
           </div>
         </section>
 

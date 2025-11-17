@@ -129,7 +129,7 @@ export default function LetsTalkSection() {
                   opacity: [0, 1, 0]
                 }}
                 transition={{ 
-                  duration: 15,
+                  duration: 5,
                   repeat: Infinity, 
                   ease: 'easeInOut' 
                 }}

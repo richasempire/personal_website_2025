@@ -1,4 +1,5 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import ContentModal from "../components/popup/ContentModal";
 import ImageGallery from "../components/popup/ImageGallery";
 import ImageView from "../components/popup/ImageView";
@@ -7,12 +8,128 @@ import { cursor, stickyNav } from "../utils";
 import Footer from "./Footer";
 import Header from "./Header";
 import Preloader from "./Preloader";
+
+const ModeToggle = () => {
+  const router = useRouter();
+  const [mode, setMode] = useState('human');
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    // Detect mode from URL
+    const isAIRoute = router.pathname.startsWith('/ai');
+    const urlMode = isAIRoute ? 'machine' : 'human';
+    
+    setMode(urlMode);
+    document.body.setAttribute('data-mode', urlMode);
+    window.localStorage.setItem('siteMode', urlMode);
+  }, [router.pathname]);
+
+  const toggleMode = () => {
+    const next = mode === 'human' ? 'machine' : 'human';
+    
+    // Save current scroll position before navigation
+    if (typeof window !== 'undefined') {
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      window.localStorage.setItem('scrollPosition', scrollPosition.toString());
+    }
+    
+    // Determine target route
+    let targetRoute;
+    if (next === 'machine') {
+      // Switch to /ai/ route
+      if (router.pathname === '/') {
+        targetRoute = '/ai';
+      } else {
+        targetRoute = `/ai${router.pathname}`;
+      }
+    } else {
+      // Switch to human route (remove /ai prefix)
+      targetRoute = router.pathname.replace('/ai', '') || '/';
+    }
+    
+    // Save preference
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('siteMode', next);
+    }
+    
+    // Use View Transitions API if available for smooth transition
+    if (typeof document !== 'undefined' && document.startViewTransition) {
+      document.startViewTransition(() => {
+        router.push(targetRoute);
+      });
+    } else {
+      router.push(targetRoute);
+    }
+  };
+
+  return (
+    <button className={`mode-toggle ${mode}`} onClick={toggleMode} aria-label="Toggle Human/Machine mode">
+      <span className="label">Human</span>
+      <span className={`switch`} />
+      <span className="label">Machine</span>
+    </button>
+  );
+};
+
 const Layout = ({ children, noHeader }) => {
+  const router = useRouter();
+  const isAIRoute = router.pathname.startsWith('/ai');
+  
   useEffect(() => {
     cursor();
   }, []);
+  
   useEffect(() => {
     window.addEventListener("scroll", stickyNav);
+  }, []);
+  
+  // Save scroll position before route changes (for browser back/forward)
+  useEffect(() => {
+    const handleRouteChangeStart = () => {
+      // Save current scroll position before any route change
+      if (typeof window !== 'undefined') {
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        window.localStorage.setItem('scrollPosition', scrollPosition.toString());
+      }
+    };
+
+    const handleRouteChangeComplete = () => {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const savedScrollPosition = window.localStorage.getItem('scrollPosition');
+        if (savedScrollPosition) {
+          window.scrollTo(0, parseInt(savedScrollPosition, 10));
+          // Clear saved position after restoring
+          window.localStorage.removeItem('scrollPosition');
+        }
+      }, 100);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [router]);
+  
+  // Auto-redirect based on saved preference
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const savedMode = window.localStorage.getItem('siteMode');
+    const isAIRoute = router.pathname.startsWith('/ai');
+    
+    // If saved mode doesn't match current route, redirect
+    if (savedMode === 'machine' && !isAIRoute) {
+      const targetRoute = router.pathname === '/' ? '/ai' : `/ai${router.pathname}`;
+      router.replace(targetRoute);
+    } else if (savedMode === 'human' && isAIRoute) {
+      const targetRoute = router.pathname.replace('/ai', '') || '/';
+      router.replace(targetRoute);
+    }
   }, []);
 
   return (
@@ -22,7 +139,8 @@ const Layout = ({ children, noHeader }) => {
       <ImageView />
       <ImageGallery />
       <ContentModal />
-      <Preloader />
+      {/* Only show preloader on human mode pages */}
+      {!isAIRoute && <Preloader />}
       
       {/* Website Under Construction Popup - Hidden */}
       {/* <div className="construction-popup" id="construction-popup">
@@ -67,6 +185,11 @@ const Layout = ({ children, noHeader }) => {
             <div className="line-col" />
           </div>
         </div>
+      </div>
+      
+      {/* Mode Toggle - Fixed at bottom center */}
+      <div className="mode-toggle-container">
+        <ModeToggle />
       </div>
     </Fragment>
   );
