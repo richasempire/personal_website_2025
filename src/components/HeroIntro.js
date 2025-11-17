@@ -8,9 +8,11 @@ const HeroIntro = () => {
   const [currentTechIndex, setCurrentTechIndex] = useState(0);
   const [currentLeftIndex, setCurrentLeftIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobileTransitioning, setIsMobileTransitioning] = useState(false);
   const [isLeftTransitioning, setIsLeftTransitioning] = useState(false);
   const [showText, setShowText] = useState(false);
   const [showSemiCircle, setShowSemiCircle] = useState(false);
+  const [showMobileText, setShowMobileText] = useState(false);
 
   const technologies = [
     "Emerging technologies",
@@ -68,8 +70,18 @@ const HeroIntro = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Disable scroll during animation
+  // Disable scroll during animation (only on desktop, not mobile)
   useEffect(() => {
+    // Check if mobile/responsive (1024px and below)
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 1024;
+    
+    // Skip scroll disable on mobile
+    if (isMobile) {
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+      return;
+    }
+    
     if (scrollDisabled) {
       // Use padding-right to maintain scrollbar space instead of hiding it
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -87,13 +99,24 @@ const HeroIntro = () => {
   }, [scrollDisabled]);
 
   useEffect(() => {
-    // Start animation sequence: x -> all-appear -> hold-center -> final-move
+    // Check if mobile/responsive (1024px and below)
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 1024;
+    
+    // On mobile, enable scroll immediately and skip desktop animations
+    if (isMobile) {
+      setScrollDisabled(false);
+      setShowMobileText(true);
+      return;
+    }
+    
+    // Desktop animation sequence: x -> all-appear -> hold-center -> final-move
     const t1 = setTimeout(() => setPhase("all-appear"), 2500); // f, brackets, and x all appear together in center
     const t2 = setTimeout(() => setPhase("hold-center"), 3000); // hold f(x) in center for 2 seconds
     const t3 = setTimeout(() => setPhase("final-move"), 5000); // all elements move to final positions together
     const t4 = setTimeout(() => setScrollDisabled(false), 5500); // enable scroll after all elements are positioned
     const t5 = setTimeout(() => setShowSemiCircle(true), 5800); // show semi-circle after (x) moves to final position (5s + 0.8s)
     const t6 = setTimeout(() => setShowText(true), 6200); // show text after semi-circle appears (5.8s + 0.4s)
+    
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -104,7 +127,7 @@ const HeroIntro = () => {
     };
   }, []);
 
-  // Technology cycling effect - starts only when text is shown
+  // Technology cycling effect - starts only when text is shown (desktop)
   useEffect(() => {
     if (showText) {
       const interval = setInterval(() => {
@@ -118,6 +141,21 @@ const HeroIntro = () => {
       return () => clearInterval(interval);
     }
   }, [showText, technologies.length]);
+
+  // Technology cycling effect for mobile - starts earlier
+  useEffect(() => {
+    if (showMobileText) {
+      const interval = setInterval(() => {
+        setIsMobileTransitioning(true);
+        setTimeout(() => {
+          setCurrentTechIndex((prev) => (prev + 1) % technologies.length);
+          setIsMobileTransitioning(false);
+        }, 300); // Half of transition duration
+      }, 2000); // Change every 2 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [showMobileText, technologies.length]);
 
   // Left text cycling effect - starts only when text is shown
   useEffect(() => {
@@ -137,6 +175,50 @@ const HeroIntro = () => {
 
   return (
     <div className={`hero-intro ${phase}`}>
+      {/* Mobile Hero Section */}
+      <div className="hero-mobile">
+        {/* Block A - Top Section */}
+        <div className="hero-mobile-block-a">
+          <div className="hero-mobile-f-bg">f</div>
+          <div className="hero-mobile-description">
+            {leftWords.map((word, index) => (
+              <span key={index}>
+                <span className="hero-mobile-word">{word}</span>
+                {index < leftWords.length - 1 && (
+                  <span className="hero-mobile-separator">•</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        {/* Curved white arc divider */}
+        <img src="/images/Arc.svg" alt="Arc divider" className="hero-mobile-arc" />
+        
+        {/* Block B - Bottom Section */}
+        <div className="hero-mobile-block-b">
+          <div className="hero-mobile-x-bg">x</div>
+          <h1 className="hero-mobile-title">
+            {showMobileText && (
+              <span className={`hero-mobile-cycling-text ${isMobileTransitioning ? 'fade-out' : 'fade-in'}`}>
+                {technologies[currentTechIndex]}
+              </span>
+            )}
+          </h1>
+          <div className="hero-mobile-tech-list">
+            {technologies.map((word, index) => (
+              <span key={index}>
+                <span className="hero-mobile-tech-word">{word}</span>
+                {index < technologies.length - 1 && (
+                  <span className="hero-mobile-separator">•</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Hero Section */}
       {/* Small text above f(x) */}
       <div className="hero-design-for">
         I design for
