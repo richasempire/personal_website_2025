@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Link from "next/link";
-import Layout from "../../src/layout/Layout";
 
 const MachineHomePage = () => {
   useEffect(() => {
@@ -12,11 +11,10 @@ const MachineHomePage = () => {
   }, []);
 
   return (
-    <Layout>
-      <div className="machine-page">
-        <div className="machine-header">
-          <h1>Richa Gupta[Download CV]</h1>
-        </div>
+    <div className="machine-page">
+      <div className="machine-header">
+        <h1>Richa Gupta[Download CV]</h1>
+      </div>
 
         <div className="machine-section">
           <h2># f(x)</h2>
@@ -101,7 +99,11 @@ const MachineHomePage = () => {
                   <td>Product, AI & ML</td>
                 </tr>
                 <tr>
-                  <td><a href="https://plus-ai-demo.vercel.app/" target="_blank" rel="noopener noreferrer" className="machine-link">IPLUS</a></td>
+                  <td>
+                    <Link href="/ai/plus" className="machine-link">
+                      PLUS AI
+                    </Link>
+                  </td>
                   <td>Product, Entrepreneurship</td>
                 </tr>
                 <tr>
@@ -113,14 +115,13 @@ const MachineHomePage = () => {
           </div>
         </div>
 
-        <div className="machine-section">
-          <h2>### what if</h2>
-          <p>x is us</p>
-          <p>and f(x) is what we choose to become</p>
-          <p className="machine-link">[Lets build it together]</p>
-        </div>
+      <div className="machine-section">
+        <h2>### what if</h2>
+        <p>x is us</p>
+        <p>and f(x) is what we choose to become</p>
+        <p className="machine-link">[Lets build it together]</p>
       </div>
-    </Layout>
+    </div>
   );
 };
 

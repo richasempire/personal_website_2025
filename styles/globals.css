@@ -1,15 +1,162 @@
+.plus-video-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: #f5f5f5;
+  padding: 48px 80px 0;
+  border-radius: 32px;
+}
+
+.plus-video-wrapper {
+  width: 85%;
+  max-width: 980px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+}
+
+.plus-video {
+  width: 100%;
+  display: block;
+  border: none;
+}
+
+.plus-video-caption {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #666;
+  max-width: 640px;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.standalone-caption {
+  margin: 32px auto;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .plus-video-feature {
+    padding: 32px 0 0;
+  }
+
+  .plus-video-wrapper {
+    width: 100vw;
+    border-radius: 0;
+  }
+}
 /* Iceberg full-viewport section (Shore.ai) */
 .iceberg-section {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: url('/images/Iceberg%20Section.svg') center / cover no-repeat;
+  background: url('/images/Iceberg%20Section.svg') center bottom / 100% auto no-repeat;
+}
+
+/* Responsive - Reduce spacing before iceberg image */
+@media (max-width: 768px) {
+  .iceberg-section {
+    min-height: 60vh; /* maintain aspect ratio on mobile */
+    padding-top: 0;
+    background-image: url('/images/iceberg%20Mobile.svg');
+    background-position: center top; /* Position image at top */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    min-height: 120vw; /* ensure full SVG visible */
+  }
 }
 .iceberg-section .iceberg-image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.plus-about-section {
+  display: flex;
+  gap: 20px;
+  padding: 100px 80px;
+  background: #f3f3f3;
+  align-items: flex-start;
+}
+
+.plus-about-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 48px;
+  letter-spacing: 2px;
+  color: #b4b4b4;
+  font-family: 'Arial', sans-serif;
+}
+
+.plus-about-content {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.plus-about-intro {
+  font-family: Arial, sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #111111;
+  margin-bottom: 48px;
+}
+
+.plus-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.plus-mission-card {
+  background: #ffffff;
+  border: 2px solid #f1f1f1;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.plus-mission-card h3 {
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #111111;
+}
+
+.plus-mission-card p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .plus-about-section {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  .plus-about-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    text-align: left;
+    font-size: 32px;
+  }
+
+  .plus-about-content {
+    padding: 0;
+  }
+
+  .plus-about-intro {
+    font-size: 22px;
+  }
+
+  .plus-mission-grid {
+    grid-template-columns: 1fr;
+  }
 }
 /* Market Analysis (Shore.ai) - Background image and three columns */
 .market-analysis-section {
@@ -2407,24 +2554,83 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 /* Responsive Design for Let's Talk Section */
 @media (max-width: 1024px) {
 
-  .lets-talk-title { font-size: clamp(38px, 6vw, 96px); }
-  .lets-talk-subtitle { font-size: clamp(20px, 3.5vw, 44px); }
-  .lets-talk-subsubtitle { font-size: clamp(18px, 3vw, 36px); }
-  .lets-talk-email { font-size: clamp(14px, 2.2vw, 22px); padding: 14px 24px; }
+  .lets-talk-section {
+    min-height: 60vw;
+    padding: 80px 0 60px;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   .lets-talk-container {
-    padding-bottom: 150px;
+    padding: 0 40px 80px;
+    width: 100%;
+  }
+
+  .lets-talk-content {
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .lets-talk-title {
+    font-size: 40px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .lets-talk-subtitle {
+    font-size: 20px;
+    line-height: 1.45;
+    margin: 20px 0 30px;
+  }
+
+  .lets-talk-email {
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 768px) {
 
-  .lets-talk-section { padding: 60px 0; }
-  .lets-talk-container { padding: 0 20px; }
-  .lets-talk-title { font-size: clamp(32px, 8vw, 56px); }
-  .lets-talk-subtitle { font-size: clamp(18px, 5vw, 28px); }
-  .lets-talk-subsubtitle { font-size: clamp(16px, 4.5vw, 24px); }
-  .lets-talk-email { font-size: 16px; padding: 12px 18px; }
+  .lets-talk-section {
+    padding: 50px 0;
+    min-height: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lets-talk-container {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .lets-talk-content {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .lets-talk-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .lets-talk-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 16px 0 24px;
+  }
+
+  .lets-talk-email {
+    font-size: 14px;
+    padding: 10px 16px;
+    width: auto;
+    text-align: center;
+  }
   
 }
 
@@ -2800,8 +3006,10 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   @media (max-width: 1024px) {
     .shoreai-hero-content {
       flex-direction: column;
-      gap: 40px;
-      padding: 60px 40px;
+      gap: 0;
+      padding: 0 20px;
+      min-height: 100vh;
+      justify-content: center;
     }
 
     .hero-left-section,
@@ -2810,8 +3018,53 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
       width: 100%;
     }
 
-    .hero-right-section { order: -1; /* Show logo/title first on mobile */ }
-    .shoreai-hero::after { width: 100vw; height: 60vh; }
+    .hero-left-section {
+      order: -1;
+      position: relative;
+      padding: 80px 20px 40px;
+      text-align: center;
+      min-height: 320px;
+    }
+
+    .quote-background {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      z-index: 1;
+    }
+
+    .quote-mark {
+      width: 160px;
+      height: auto;
+    }
+
+    .quote-text {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      padding-top: 40px;
+    }
+
+    .hero-right-section { 
+      order: 0;
+      padding-top: 40px; /* Top padding for image */
+      padding-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Gray background covers entire right section - image, tags, title, and description */
+    .shoreai-hero::after { 
+      width: 100vw; 
+      top: 0;
+      left: 0;
+      right: 0;
+      /* Cover entire right section including description */
+      height: 100%;
+      background: #ECECEC;
+    }
 
     .quote-background {
       left: -50px !important;
@@ -2824,75 +3077,150 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 
   @media (max-width: 768px) {
     .hero-logo-container {
-    width: 260px;
-    height: 260px;
+      width: 260px;
+      height: 260px;
+      margin-top: 0;
     }
-  .shoreai-hero-image { transform: translateY(0); }
+    
+    .shoreai-hero-image { 
+      transform: translateY(0); 
+    }
 
     .hero-shoreai-title {
-    font-size: clamp(2.4rem, 6vw, 2.6rem);
-    font-family: 'Playfair Display', serif;
-    margin-top: 10px;
+      font-size: clamp(2.4rem, 6vw, 2.6rem);
+      font-family: 'Playfair Display', serif;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .hero-shoreai-tags {
       max-width: 100%;
-    gap: 12px;
+      gap: 12px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
-  .shoreai-hero-content {
-    padding: 0 20px;
-    gap: 30px;
-  }
+    .shoreai-hero-content {
+      padding: 0 20px;
+      gap: 0;
+    }
 
-  .hero-right-section {
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-  }
+    .hero-right-section {
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      padding-top: 40px; /* Top padding for image */
+      padding-bottom: 40px; /* Reduced bottom padding */
+      position: relative;
+      z-index: 2;
+      background: transparent;
+    }
 
-  .shoreai-description {
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-  }
+    .shoreai-description {
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 520px;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
 
-  .shoreai-hero::after {
-    width: 100%;
-    height: 35vh;
-  }
+    /* Make gray background cover entire right section */
+    .shoreai-hero {
+      position: relative;
+      background: #ECECEC; /* Gray background for entire hero section */
+      min-height: auto !important; /* Remove full viewport height in responsive */
+      padding-bottom: 0; /* Remove bottom padding */
+    }
+    
+    /* Gray background covers entire right section - image, tags, title, and description */
+    .shoreai-hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%; /* Cover entire hero section */
+      background: #ECECEC;
+      z-index: 1;
+    }
+    
+    /* Make sure right section is transparent so gray shows through */
+    .hero-right-section {
+      background: transparent;
+    }
+    
+    /* Add white background to image container to match design - only in responsive */
+    .hero-logo-container {
+      background: #FFFFFF;
+      padding: 20px;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0 auto;
+    }
 
-  .hero-left-section {
-    text-align: center;
-  }
+    .hero-left-section {
+      text-align: left;
+      position: relative;
+      z-index: 2;
+      padding: 40px 20px 40px 20px; /* Reduced padding */
+      padding-right: 0; /* Remove right padding */
+      min-height: auto; /* Remove fixed min-height */
+      display: flex;
+      align-items: center;
+      background: #ECECEC; /* Gray background to match design */
+    }
 
-  .quote-background {
-    position: relative;
-    left: 0 !important;
-    top: 0;
-    transform: none;
-    margin: 0 auto;
-  }
+    .quote-background {
+      position: absolute;
+      left: -40px; /* Position quote marks to the left, but not too far */
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
 
-  .quote-mark {
-    width: 200px !important;
-    opacity: 0.3;
-  }
+    .quote-mark {
+      width: 200px !important; /* Smaller quote mark */
+      opacity: 0.3;
+      height: auto;
+    }
 
-  .quote-text {
-    margin: 20px auto 0;
-    max-width: 260px;
-    text-align: center;
-  }
+    /* Quote text overlaps quote marks directly on top */
+    .quote-text {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      padding-right: 0;
+      width: auto;
+      min-width: 320px;
+      max-width: 400px;
+      text-align: left;
+      left: -250px;
+    }
+    
+    .hero-quote {
+      font-size: clamp(24px, 5vw, 32px) !important;
+      line-height: 1.3 !important;
+      color: #333333 !important;
+      font-weight: 400 !important;
+      white-space: pre-line !important; /* Preserve line breaks from <br/> tags */
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+      word-wrap: normal !important;
+      hyphens: none !important;
+      max-width: 100% !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
 
-  .hero-left-section::before {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 1px;
-    background: rgba(0,0,0,0.1);
-    margin: 24px auto;
-  }
+    .hero-left-section::before {
+      display: none;
+    }
   }
 
   .quote-background {
@@ -2921,12 +3249,13 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 
   .hero-quote {
     font-family: Arial, sans-serif;
-    font-size: 40px;
+    font-size: 58px;
     font-weight: 400;
     color: #333333;
     line-height: 1.2;
     margin: 0;
     text-align: left;
+    white-space: pre-line; /* Preserve line breaks */
   }
 
   /* Shore.ai Intro Section */
@@ -3002,7 +3331,7 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   }
   /* Hero-specific smaller copy */
   .shoreai-hero .shoreai-description {
-    font-size: clamp(14px, 1.6vw, 16px);
+    font-size: clamp(16px, 1.6vw, 16px);
     line-height: 1.4;
   }
 
@@ -3114,15 +3443,15 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
     margin: 0 auto;
   }
 
-  .we-designed-title {
-    font-family: Arial, sans-serif;
-    font-size: 60px;
-    font-weight: 400;
-    color: #333333;
-    margin: 0 0 80px 0;
-    text-align: center;
-    line-height: 1.1;
-  }
+.we-designed-title {
+  font-family: Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 40px 0;
+  text-align: center;
+  line-height: 1.2;
+}
 
   .features-showcase {
     display: flex;
@@ -3172,6 +3501,44 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
     max-width: 500px;
     flex: 0 0 auto;
   }
+.plus-video-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: #f5f5f5;
+  padding: 48px 80px 0;
+  border-radius: 32px;
+}
+
+.plus-video-wrapper {
+  width: 85%;
+  max-width: 980px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+}
+
+.plus-video {
+  width: 100%;
+  display: block;
+  border: none;
+}
+
+.plus-video-caption {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #666;
+  max-width: 640px;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.standalone-caption {
+  margin: 32px auto;
+  text-align: center;
+}
 
   .vertical-line {
     width: 1px;
@@ -3232,6 +3599,17 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 @media (max-width: 768px) {
   .building-connections-section::before {
     display: none;
+  }
+
+  .plus-video-feature {
+    padding: 32px 0 0;
+    border-radius: 0;
+  }
+
+  .plus-video-wrapper {
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
   }
 }
 
@@ -3800,18 +4178,28 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   }
 
   .quote-text {
-    margin-left: 80px;
-    max-width: 2000px;
-    margin-top: 30px;
+    margin-left: 0;
+    max-width: 1200px;
+    margin-top: 0;
+    padding-right: -500px;
+    left: -120px;
+    width: 1200px;
+    min-width: 600px;
+  }
+  
+  .hero-quote {
+    white-space: pre-line !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    word-wrap: normal !important;
+    hyphens: none !important;
+    font-size: clamp(24px, 5vw, 32px) !important;
+    line-height: 1.3 !important;
   }
 
   .quote-mark {
     width: 300px;
     left: -50px;
-  }
-
-  .hero-quote {
-    font-size: clamp(40px, 6vw, 50px);
   }
   
   .images-grid {
@@ -3957,49 +4345,18 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   display: none;
 }
 
-.roadmap-mobile-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+/* Responsive - Hide desktop, show mobile */
+@media (max-width: 768px) {
+  .roadmap-grid {
+    display: none !important;
+  }
+  
+  .roadmap-mobile {
+    display: block;
+  }
 }
 
-.roadmap-mobile-cell {
-  padding: 30px 16px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #171717;
-  line-height: 1.4;
-}
-
-.roadmap-mobile-heading {
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.roadmap-mobile-subheading {
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.roadmap-mobile-cell.tone-1 { background: #D5D7CE; }
-.roadmap-mobile-cell.tone-2 { background: #DEE0D7; }
-.roadmap-mobile-cell.tone-3 { background: #E8EAE1; }
-.roadmap-mobile-cell.tone-4 { background: #F0F2E9; }
-.roadmap-mobile-cell.tone-5 { background: #CED3B9; }
-.roadmap-mobile-cell.tone-6 { background: #D6DBC1; }
-.roadmap-mobile-cell.tone-7 { background: #DFE4CA; }
-.roadmap-mobile-cell.tone-8 { background: #E5EAD0; }
-.roadmap-mobile-cell.tone-9 { background: #C9D1AE; }
-.roadmap-mobile-cell.tone-10 { background: #D1D9B6; }
-.roadmap-mobile-cell.tone-11 { background: #D9E1BE; }
-.roadmap-mobile-cell.tone-12 { background: #DFE7C4; }
-.roadmap-mobile-cell.tone-timeline { background: #ECECEC; font-weight: 700; text-align: center; }
-
-.roadmap-mobile-row.timeframe-row .roadmap-mobile-cell {
-  font-size: 18px;
-  line-height: 1.2;
-  padding: 18px 12px;
-}
+/* Old mobile styles removed - using new responsive styles below */
 
 /* Background Labels */
 .roadmap-background-labels {
@@ -4037,25 +4394,226 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   left: 41%;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-  .roadmap-grid {
-    display: none;
+/* Mobile Roadmap Styles - Matches reference image exactly */
+@media (max-width: 768px) {
+  .roadmap-section {
+    position: relative;
+    overflow: visible !important; /* Allow labels to be visible */
   }
-  
-  .roadmap-section::before,
-  .roadmap-section::after {
-    font-size: 30px;
+
+  .roadmap-mobile-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
   }
 
   .roadmap-mobile-cell {
-    font-size: 10px;
-    padding: 14px 8px;
+    padding: 3px 8px !important; /* 3px top/bottom, 8px left/right */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #171717;
+    line-height: 1.4;
+    min-height: 80px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between first and second text */
+    align-items: flex-start;
+    position: relative;
   }
 
+  /* Launch row - matches desktop Box 1-4 colors */
+  .roadmap-mobile-row.launch-row .roadmap-mobile-cell:nth-child(1) {
+    background-color: #D5D7CE;
+  }
+  .roadmap-mobile-row.launch-row .roadmap-mobile-cell:nth-child(2) {
+    background-color: #DEE0D7;
+  }
+  .roadmap-mobile-row.launch-row .roadmap-mobile-cell:nth-child(3) {
+    background-color: #E8EAE1;
+  }
+  .roadmap-mobile-row.launch-row .roadmap-mobile-cell:nth-child(4) {
+    background-color: #F0F2E9;
+  }
+  .roadmap-mobile-row.launch-row .roadmap-mobile-cell {
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Improvements row - light green background with variations */
+  .roadmap-mobile-row.improvements-row .roadmap-mobile-cell:nth-child(1) {
+    background-color: #CED3B9;
+  }
+  .roadmap-mobile-row.improvements-row .roadmap-mobile-cell:nth-child(2) {
+    background-color: #D6DBC1;
+  }
+  .roadmap-mobile-row.improvements-row .roadmap-mobile-cell:nth-child(3) {
+    background-color: #DFE4CA;
+  }
+  .roadmap-mobile-row.improvements-row .roadmap-mobile-cell:nth-child(4) {
+    background-color: #E5EAD0;
+  }
+
+  /* Additions row - light green background with variations */
+  .roadmap-mobile-row.additions-row .roadmap-mobile-cell:nth-child(1) {
+    background-color: #CED3B9;
+  }
+  .roadmap-mobile-row.additions-row .roadmap-mobile-cell:nth-child(2) {
+    background-color: #D6DBC1;
+  }
+  .roadmap-mobile-row.additions-row .roadmap-mobile-cell:nth-child(3) {
+    background-color: #DFE4CA;
+  }
+  .roadmap-mobile-row.additions-row .roadmap-mobile-cell:nth-child(4) {
+    background-color: #E5EAD0;
+  }
+
+  /* Markets row - light green background with variations */
+  .roadmap-mobile-row.markets-row .roadmap-mobile-cell:nth-child(1) {
+    background-color: #C9D1AE;
+  }
+  .roadmap-mobile-row.markets-row .roadmap-mobile-cell:nth-child(2) {
+    background-color: #D1D9B6;
+  }
+  .roadmap-mobile-row.markets-row .roadmap-mobile-cell:nth-child(3) {
+    background-color: #D9E1BE;
+  }
+  .roadmap-mobile-row.markets-row .roadmap-mobile-cell:nth-child(4) {
+    background-color: #DFE7C4;
+  }
+
+  /* Timeframe row - light grey background with variations */
+  .roadmap-mobile-row.timeframe-row .roadmap-mobile-cell:nth-child(1) {
+    background-color: #D9D9D9;
+  }
+  .roadmap-mobile-row.timeframe-row .roadmap-mobile-cell:nth-child(2) {
+    background-color: #E3E3E3;
+  }
+  .roadmap-mobile-row.timeframe-row .roadmap-mobile-cell:nth-child(3) {
+    background-color: #EDEDED;
+  }
+  .roadmap-mobile-row.timeframe-row .roadmap-mobile-cell:nth-child(4) {
+    background-color: #F5F5F5;
+  }
   .roadmap-mobile-row.timeframe-row .roadmap-mobile-cell {
-    font-size: 12px;
-    padding: 10px 8px;
+    font-weight: 700;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 3px 8px !important; /* 3px top/bottom, 8px left/right for timeframe row */
+  }
+
+  .roadmap-mobile-item {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #171717;
+    line-height: 1.2;
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Allow text to wrap to two lines */
+    max-width: 100%;
+  }
+
+  /* First text - top left aligned */
+  .roadmap-mobile-item:first-child {
+    align-self: flex-start;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Second text (indented) - bottom right aligned */
+  .roadmap-mobile-item.indented {
+    align-self: flex-end;
+    margin-left: 0;
+    margin-top: auto; /* Push to bottom */
+    text-align: right;
+  }
+
+  /* If there are two items, first stays top-left, second goes bottom-right */
+  .roadmap-mobile-cell:has(.roadmap-mobile-item:nth-child(2)) {
+    justify-content: space-between;
+  }
+
+  /* Ensure roadmap container is positioned relative */
+  .roadmap-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Mobile roadmap grid - lower z-index so labels appear on top */
+  .roadmap-mobile {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Background labels - semi-transparent, positioned over first 3 rows - HIGHEST z-index */
+  .roadmap-background-labels {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10 !important; /* Higher than mobile grid */
+  }
+
+  .background-label {
+    font-size: 28px !important;
+    font-weight: 100;
+    color: rgba(51, 51, 51, 0.15) !important; /* Slightly more visible */
+    white-space: nowrap;
+    position: absolute !important;
+    z-index: 10 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  /* Improvements label - positioned over first row (launch-row) */
+  .improvements-bg {
+    top: 12% !important;
+  }
+
+  /* Additions label - positioned over second row (additions-row) */
+  .additions-bg {
+    top: 37% !important;
+  }
+
+  /* Markets label - positioned over third row (markets-row) */
+  .markets-bg {
+    top: 62% !important;
+  }
+
+  .building-connections-title,
+  .we-designed-title,
+  .market-heading {
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    line-height: 1.3;
+  }
+
+  .feature-heading,
+  .showcase-heading,
+  .market-col-title {
+    font-size: 22px !important;
+    line-height: 1.35;
+  }
+
+  .feature-description,
+  .showcase-description,
+  .market-col-desc,
+  .market-col-sub {
+    font-size: 16px !important;
+    line-height: 1.5;
+  }
+
+  .roadmap-background-labels {
+    display: block !important;
   }
 }
 

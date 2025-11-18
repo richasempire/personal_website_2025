@@ -25,10 +25,25 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/ai": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/ai.js"
+    ],
     "/ai/shoreai": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/ai/shoreai.js"
+    ],
+    "/plus": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/plus.js"
+    ],
+    "/shoreai": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/shoreai.js"
     ]
   },
   "ampFirstPages": []

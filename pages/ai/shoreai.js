@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Layout from "../../src/layout/Layout";
 
 const MachineShoreAIPage = () => {
   useEffect(() => {
@@ -11,12 +10,11 @@ const MachineShoreAIPage = () => {
   }, []);
 
   return (
-    <Layout>
-      <div className="machine-page">
-        <div className="machine-header">
-          <h1>Shore.ai</h1>
-          <p className="machine-meta">Product • AI & ML • 2024</p>
-        </div>
+    <div className="machine-page">
+      <div className="machine-header">
+        <h1>Shore.ai</h1>
+        <p className="machine-meta">Product • AI & ML • 2024</p>
+      </div>
 
         <div className="machine-section">
           <h2>## Overview</h2>
@@ -161,13 +159,12 @@ const MachineShoreAIPage = () => {
           </div>
         </div>
 
-        <div className="machine-section">
-          <p className="machine-footnote">
-            * Market data as of 2024. All metrics subject to change based on user adoption and market conditions.
-          </p>
-        </div>
+      <div className="machine-section">
+        <p className="machine-footnote">
+          * Market data as of 2024. All metrics subject to change based on user adoption and market conditions.
+        </p>
       </div>
-    </Layout>
+    </div>
   );
 };
 

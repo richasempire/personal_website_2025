@@ -65,8 +65,8 @@ const ProjectsSection = () => {
       name: "PLUS",
       category: "Product, Entrepreneurship",
       image: "/images/Plus.jpg",
-      link: "https://plus-ai-demo.vercel.app/",
-      external: true
+      link: "/plus",
+      external: false
     },
     {
       id: 9,

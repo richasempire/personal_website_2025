@@ -1,6 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import Link from "next/link";
-import Layout from "../src/layout/Layout";
 import HeroIntro from "../src/components/HeroIntro";
 import AboutSection from "../src/components/AboutSection";
 import CollaborateSection from "../src/components/CollaborateSection";
@@ -11,7 +9,7 @@ import { gsap } from "gsap";
 
 const Index = () => {
   return (
-    <Layout>
+    <>
       <div className="section started" id="section-started">
         <div className="centrize full-width">
           <div className="vertical-center">
@@ -26,7 +24,7 @@ const Index = () => {
       <ProjectsSection />
       {/* <CollaborateSection /> */}
       <LetsTalkSection />
-    </Layout>
+    </>
   );
 };
 export default Index;

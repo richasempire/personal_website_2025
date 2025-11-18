@@ -1,4 +1,3 @@
-import Layout from "../src/layout/Layout";
 import Lottie from 'lottie-react';
 import Shoreailogo from '../src/animations/Shoreailogo.json';
 import { useRef, useEffect, useState } from 'react';
@@ -302,11 +301,10 @@ const ShoreaiPage = () => {
   }, []);
 
   return (
-    <Layout>
-      <div className="portfolio-page">
-        {/* Hero Section */}
-        <section className="shoreai-hero">
-          <div className="shoreai-hero-content">
+    <div className="portfolio-page">
+      {/* Hero Section */}
+      <section className="shoreai-hero">
+        <div className="shoreai-hero-content">
             {/* Left 2/3 - Quote */}
             <div className="hero-left-section">
               <div className="quote-background">
@@ -554,59 +552,63 @@ const ShoreaiPage = () => {
               </div>
             </div>
 
-            {/* Mobile specific roadmap */}
+            {/* Mobile specific roadmap - matches desktop content exactly */}
             <div className="roadmap-mobile">
-              <div className="roadmap-mobile-row">
-                <div className="roadmap-mobile-cell tone-1">
-                  <div className="roadmap-mobile-heading">Launch</div>
-                  <div className="roadmap-mobile-subheading">Multi-Lingual</div>
+              {/* Top row - Launch row (matches desktop Box 1-4) */}
+              <div className="roadmap-mobile-row launch-row">
+                <div className="roadmap-mobile-cell tone-launch">
+                  <div className="roadmap-mobile-item">Launch</div>
+                  <div className="roadmap-mobile-item indented">Multi-Lingual</div>
                 </div>
-                <div className="roadmap-mobile-cell tone-2">
-                  <div className="roadmap-mobile-heading">Launch</div>
+                <div className="roadmap-mobile-cell tone-launch">
+                  <div className="roadmap-mobile-item">VR Representations</div>
                 </div>
-                <div className="roadmap-mobile-cell tone-3">
-                  <div className="roadmap-mobile-heading">Launch</div>
+                <div className="roadmap-mobile-cell tone-launch">
+                  <div className="roadmap-mobile-item">Networking Insights</div>
                 </div>
-                <div className="roadmap-mobile-cell tone-4">
-                  <div className="roadmap-mobile-heading">Launch</div>
-                </div>
-              </div>
-
-              <div className="roadmap-mobile-row">
-                <div className="roadmap-mobile-cell tone-5">
-                  <div className="roadmap-mobile-heading">Alumni-network</div>
-                </div>
-                <div className="roadmap-mobile-cell tone-6">
-                  <div className="roadmap-mobile-heading">Mobile Connect</div>
-                  <div className="roadmap-mobile-subheading">Facial Recognition</div>
-                </div>
-                <div className="roadmap-mobile-cell tone-7">
-                  <div className="roadmap-mobile-heading">VR Coffees</div>
-                  <div className="roadmap-mobile-subheading">Virtual Personas</div>
-                </div>
-                <div className="roadmap-mobile-cell tone-8">
-                  <div className="roadmap-mobile-heading">VR micro-communities</div>
+                <div className="roadmap-mobile-cell tone-launch">
+                  {/* Empty cell */}
                 </div>
               </div>
 
-              <div className="roadmap-mobile-row">
-                <div className="roadmap-mobile-cell tone-9">
-                  <div className="roadmap-mobile-heading">Release in universities</div>
+              {/* Row 2 - Additions (matches desktop Box 5-8) */}
+              <div className="roadmap-mobile-row additions-row">
+                <div className="roadmap-mobile-cell tone-additions">
+                  <div className="roadmap-mobile-item">Alumni-network</div>
                 </div>
-                <div className="roadmap-mobile-cell tone-10">
-                  <div className="roadmap-mobile-heading">Freshers &amp; HR</div>
-                  <div className="roadmap-mobile-subheading">United States</div>
+                <div className="roadmap-mobile-cell tone-additions">
+                  <div className="roadmap-mobile-item">Mobile Connect</div>
+                  <div className="roadmap-mobile-item indented">Facial Recognition</div>
                 </div>
-                <div className="roadmap-mobile-cell tone-11">
-                  <div className="roadmap-mobile-heading">VCs and Startups</div>
-                  <div className="roadmap-mobile-subheading">India and China</div>
+                <div className="roadmap-mobile-cell tone-additions">
+                  <div className="roadmap-mobile-item">VR Coffees</div>
+                  <div className="roadmap-mobile-item indented">Virtual Personas</div>
                 </div>
-                <div className="roadmap-mobile-cell tone-12">
-                  <div className="roadmap-mobile-heading">Friendship &amp; Dating</div>
-                  <div className="roadmap-mobile-subheading">All around the world</div>
+                <div className="roadmap-mobile-cell tone-additions">
+                  <div className="roadmap-mobile-item">VR micro-communities</div>
                 </div>
               </div>
 
+              {/* Row 3 - Markets (matches desktop Box 9-12) */}
+              <div className="roadmap-mobile-row markets-row">
+                <div className="roadmap-mobile-cell tone-markets">
+                  <div className="roadmap-mobile-item">Release in universities</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-markets">
+                  <div className="roadmap-mobile-item">Freshers &amp; HR</div>
+                  <div className="roadmap-mobile-item indented">United States</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-markets">
+                  <div className="roadmap-mobile-item">VCs and Startups</div>
+                  <div className="roadmap-mobile-item indented">India and China</div>
+                </div>
+                <div className="roadmap-mobile-cell tone-markets">
+                  <div className="roadmap-mobile-item">Friendship &amp; Dating</div>
+                  <div className="roadmap-mobile-item indented">All around the world</div>
+                </div>
+              </div>
+
+              {/* Bottom row - Timeframes (matches desktop Box 13-16) */}
               <div className="roadmap-mobile-row timeframe-row">
                 <div className="roadmap-mobile-cell tone-timeline">&lt;1<br />Year</div>
                 <div className="roadmap-mobile-cell tone-timeline">1-2<br />years</div>
@@ -634,8 +636,7 @@ const ShoreaiPage = () => {
           </div>
         </section>
 
-      </div>
-    </Layout>
+    </div>
   );
 };
 

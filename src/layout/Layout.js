@@ -84,33 +84,22 @@ const Layout = ({ children, noHeader }) => {
     window.addEventListener("scroll", stickyNav);
   }, []);
   
-  // Save scroll position before route changes (for browser back/forward)
   useEffect(() => {
-    const handleRouteChangeStart = () => {
-      // Save current scroll position before any route change
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  }, []);
+  
+  // Always reset scroll to top on new route to avoid random offsets
+  useEffect(() => {
+    const handleRouteChangeComplete = () => {
       if (typeof window !== 'undefined') {
-        const scrollPosition = window.scrollY || window.pageYOffset;
-        window.localStorage.setItem('scrollPosition', scrollPosition.toString());
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
       }
     };
 
-    const handleRouteChangeComplete = () => {
-      // Small delay to ensure DOM is ready
-      setTimeout(() => {
-        const savedScrollPosition = window.localStorage.getItem('scrollPosition');
-        if (savedScrollPosition) {
-          window.scrollTo(0, parseInt(savedScrollPosition, 10));
-          // Clear saved position after restoring
-          window.localStorage.removeItem('scrollPosition');
-        }
-      }, 100);
-    };
-
-    router.events.on('routeChangeStart', handleRouteChangeStart);
     router.events.on('routeChangeComplete', handleRouteChangeComplete);
-
     return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart);
       router.events.off('routeChangeComplete', handleRouteChangeComplete);
     };
   }, [router]);
