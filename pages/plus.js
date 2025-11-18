@@ -420,7 +420,7 @@ const PlusPage = () => {
                 Join the Future of Design. Now.
               </h2>
               <div className="lets-talk-subtitle">
-              Plus AI is not just a tool, it's a paradigm shift for architecture and interior design professionals.
+              Plus AI is not just a tool, it&apos;s a paradigm shift for architecture and interior design professionals.
               </div>
               <a className="lets-talk-email" href="mailto:richag@mit.edu">richag@mit.edu</a>
             </div>
