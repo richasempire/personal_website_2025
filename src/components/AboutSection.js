@@ -256,7 +256,7 @@ const fullStory = "</strong> <br>At CSAIL, she addresses the UX rigidity of foun
           </div>
           
           <div className="about-intro">
-            <p> <strong>Richa Gupta</strong> is a graduate researcher, design technologist, and AI engineer at <strong>MIT CSAIL</strong> (Computer Science and Artificial Intelligence Laboratory) pursuing dual master's degrees in <strong>Computer Science and Design Computation at MIT </strong> (Massachusetts Institute of Technology) with <strong>4+ years of industry experience</strong>. Her work can be broadly categorized as <strong>"Human-AI Interaction / Collaboration"</strong> with sub-themes in AI engineering, product, design, research, and human-computer interaction.</p>
+            <p> <strong>Richa Gupta</strong> is a graduate researcher, design technologist, and AI engineer at <strong>MIT CSAIL</strong> (Computer Science and Artificial Intelligence Laboratory) pursuing dual master&apos;s degrees in <strong>Computer Science and Design Computation at MIT </strong> (Massachusetts Institute of Technology) with <strong>4+ years of industry experience</strong>. Her work can be broadly categorized as <strong>&quot;Human-AI Interaction / Collaboration&quot;</strong> with sub-themes in AI engineering, product, design, research, and human-computer interaction.</p>
           </div>
           
           {/* Full Story and Experience Side by Side */}
