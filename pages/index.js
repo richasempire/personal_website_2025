@@ -19,10 +19,11 @@ const Index = () => {
           </div>
         </div>
       </div>
-      
+     
       {/* <AboutSection /> */}
       <ProjectsSection />
       {/* <CollaborateSection /> */}
+      <AboutSection/>
       <LetsTalkSection />
     </>
   );

@@ -60,7 +60,7 @@ const MachineHomePage = () => {
         </div>
 
         <div className="machine-section">
-          <h2>### The Interface of Ideas</h2>
+          <h2>### Projects</h2>
           <div className="machine-table">
             <table>
               <thead>

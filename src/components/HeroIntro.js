@@ -13,6 +13,8 @@ const HeroIntro = () => {
   const [showText, setShowText] = useState(false);
   const [showSemiCircle, setShowSemiCircle] = useState(false);
   const [showMobileText, setShowMobileText] = useState(false);
+  const [animationSkipped, setAnimationSkipped] = useState(false);
+  const [showCursor, setShowCursor] = useState(false);
 
   const technologies = [
     "Emerging technologies",
@@ -45,15 +47,33 @@ const HeroIntro = () => {
 
 
 
-  // Track mouse position for cursor
+  // Track mouse position for cursor - only show on interaction
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      setShowCursor(true);
+    };
+
+    const handleMouseLeave = () => {
+      setShowCursor(false);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
   }, []);
+
+  // Skip animation function
+  const skipAnimation = () => {
+    setAnimationSkipped(true);
+    setPhase("final-move");
+    setScrollDisabled(false);
+    setShowSemiCircle(true);
+    setShowText(true);
+  };
 
   // Check if user is in hero section
   useEffect(() => {
@@ -109,13 +129,18 @@ const HeroIntro = () => {
       return;
     }
     
-    // Desktop animation sequence: x -> all-appear -> hold-center -> final-move
-    const t1 = setTimeout(() => setPhase("all-appear"), 2500); // f, brackets, and x all appear together in center
-    const t2 = setTimeout(() => setPhase("hold-center"), 3000); // hold f(x) in center for 2 seconds
-    const t3 = setTimeout(() => setPhase("final-move"), 5000); // all elements move to final positions together
-    const t4 = setTimeout(() => setScrollDisabled(false), 5500); // enable scroll after all elements are positioned
-    const t5 = setTimeout(() => setShowSemiCircle(true), 5800); // show semi-circle after (x) moves to final position (5s + 0.8s)
-    const t6 = setTimeout(() => setShowText(true), 6200); // show text after semi-circle appears (5.8s + 0.4s)
+    // Skip if animation was manually skipped
+    if (animationSkipped) {
+      return;
+    }
+    
+    // Desktop animation sequence: x -> all-appear -> hold-center -> final-move (reduced timing)
+    const t1 = setTimeout(() => setPhase("all-appear"), 1500); // f, brackets, and x all appear together in center
+    const t2 = setTimeout(() => setPhase("hold-center"), 2000); // hold f(x) in center for 1.5 seconds
+    const t3 = setTimeout(() => setPhase("final-move"), 3500); // all elements move to final positions together
+    const t4 = setTimeout(() => setScrollDisabled(false), 4000); // enable scroll after all elements are positioned
+    const t5 = setTimeout(() => setShowSemiCircle(true), 4200); // show semi-circle after (x) moves to final position
+    const t6 = setTimeout(() => setShowText(true), 4500); // show text after semi-circle appears
     
     return () => {
       clearTimeout(t1);
@@ -125,7 +150,7 @@ const HeroIntro = () => {
       clearTimeout(t5);
       clearTimeout(t6);
     };
-  }, []);
+  }, [animationSkipped]);
 
   // Technology cycling effect - starts only when text is shown (desktop)
   useEffect(() => {
@@ -219,10 +244,23 @@ const HeroIntro = () => {
       </div>
 
       {/* Desktop Hero Section */}
-      {/* Small text above f(x) */}
-      <div className="hero-design-for">
-        I design for
-      </div>
+      {/* Skip Animation Button - Minimal */}
+      {!animationSkipped && scrollDisabled && (
+        <button 
+          className="hero-skip-button"
+          onClick={skipAnimation}
+          aria-label="Skip animation"
+        >
+          Skip
+        </button>
+      )}
+
+      {/* Simple tagline - only show after animation */}
+      {showText && (
+        <div className="hero-design-for">
+          <div className="hero-tagline-main">I build AI systems that expand human agency</div>
+        </div>
+      )}
 
       {/* Static f(x) display */}
       <div className="hero-fx" style={{
@@ -261,7 +299,7 @@ const HeroIntro = () => {
         <img src="/f.svg" alt="f" />
       </div>
 
-      {/* Static left text list below f - only render after final positioning */}
+      {/* Word lists below f and x - subtle and clean */}
       {showText && (
         <div className="hero-innovation-f-list">
           {leftWords.map((word, index) => (
@@ -276,7 +314,7 @@ const HeroIntro = () => {
           ))}
         </div>
       )}
-      {/* Static left text list below f - only render after final positioning */}
+      
       {showText && (
         <div className="hero-innovation-x-list">
           {technologies.map((word, index) => (
@@ -291,6 +329,7 @@ const HeroIntro = () => {
           ))}
         </div>
       )}
+
       {/* Semi-circle below (x) - appears after (x) moves to final position */}
       {showSemiCircle && (
         <div className="hero-semi-circle"></div>
@@ -318,23 +357,7 @@ const HeroIntro = () => {
         </div>
       )} */}
 
-      {/* Mouse-following cursor - always visible */}
-      <div 
-        className="mouse-cursor"
-        style={{
-          position: 'fixed',
-          left: mousePosition.x - 10,
-          top: mousePosition.y - 10,
-          width: '20px',
-          height: '20px',
-          backgroundColor: '#89AE00',
-          borderRadius: '50%',
-          zIndex: 9999,
-          pointerEvents: 'none',
-          transition: 'none',
-          opacity: 0.5
-        }}
-      />
+      {/* Mouse cursor removed for cleaner look */}
 
     </div>
   );

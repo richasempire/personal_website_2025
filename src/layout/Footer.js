@@ -1,23 +1,31 @@
 const Footer = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="copy">
-        <p>E: richag@mit.edu</p>
-        <p>T: +1 (617)780-9005</p>
-        <p>
-          <a 
-            href="http://richag.cargo.site" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="old-website-link"
-          >
-            Old Website
-          </a>
-        </p>
       </div>
       <div className="soc-box">
-        <div className="follow-label">Socials</div>
         <div className="soc">
+          <a href="#" className="footer-name">Richa Gupta</a>
+          <button onClick={() => scrollToSection('projects')} className="button-scroll">Projects </button>
+          <button onClick={() => scrollToSection('experience')} className="button-scroll">Experience   </button>
+          <button onClick={() => scrollToSection('education')} className="button-scroll">Education   </button>
+          <button onClick={() => scrollToSection('publications')} className="button-scroll">Publications   </button>
+          <button onClick={() => scrollToSection('talks')} className="button-scroll">Talks</button>
+          <div className="follow-label">Connect—</div>
+          <a href="mailto:richag@mit.edu" className="footer-email">
+            richag@mit.edu
+          </a>
+          <a href="/cv.pdf" download className="footer-nav-button footer-download-cv">
+            <img src="/images/download_cv.svg" alt="Download CV" className="footer-cv-icon" />
+          </a>
+         
           <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/richa-gupta-hi">
             <span className="icon fab fa-linkedin" />
           </a>

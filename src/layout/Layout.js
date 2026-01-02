@@ -12,6 +12,7 @@ import Preloader from "./Preloader";
 const ModeToggle = () => {
   const router = useRouter();
   const [mode, setMode] = useState('human');
+  const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -64,11 +65,28 @@ const ModeToggle = () => {
   };
 
   return (
-    <button className={`mode-toggle ${mode}`} onClick={toggleMode} aria-label="Toggle Human/Machine mode">
-      <span className="label">Human</span>
-      <span className={`switch`} />
-      <span className="label">Machine</span>
-    </button>
+    <div className="mode-toggle-wrapper">
+      <button 
+        className={`mode-toggle ${mode}`} 
+        onClick={toggleMode} 
+        aria-label="Toggle Human/Machine mode"
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      >
+        <span className="label">Human</span>
+        <span className={`switch`} />
+        <span className="label">Machine</span>
+        {showTooltip && (
+          <div className="mode-toggle-tooltip">
+            <p>
+              Toggle perspectives: humans and machines |<br />
+              both experience information differently |<br />
+              <strong>a creative depiction</strong>
+            </p>
+          </div>
+        )}
+      </button>
+    </div>
   );
 };
 

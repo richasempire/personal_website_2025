@@ -92,7 +92,7 @@ export default function LetsTalkSection() {
             scale: [0.8, 1.1, 0.8],
             rotate: [20, 0, 20],
             borderRadius: ['45% 55% 50% 50% / 55% 50% 50% 45%', '50%', '45% 55% 50% 50% / 55% 50% 50% 45%'],
-            opacity: [0.1, 0.25, 0.1],
+            opacity: [0.15, 0.25, 0.15],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
