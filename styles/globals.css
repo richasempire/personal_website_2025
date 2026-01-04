@@ -3810,8 +3810,8 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   z-index: 100;
   background: transparent !important;
   overflow: visible;
-  max-height: 100vh;
   pointer-events: none;
+  height: auto; /* ADDED */
 }
 
 .footer .soc-box,
@@ -3822,7 +3822,7 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 .footer .copy,
 .footer .copy p,
 .footer .copy a,
-.footer .follow-label,
+.follow-label,
 .footer .soc a .icon,
 .footer .soc a.footer-email,
 .footer .soc a.old-website-link {
@@ -3837,7 +3837,6 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   font-weight: 700;
   color: #ffffff !important;
   mix-blend-mode: difference !important;
- 
   padding: 0;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -3894,6 +3893,7 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   display: inline-flex;
   align-items: center;
 }
+
 .footer .soc button.button-scroll {
   background: transparent;
   border: none;
@@ -3948,23 +3948,23 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 }
 
 .soc-box {
-  position: absolute;
+  position: fixed; /* CHANGED from absolute to fixed */
   right: 0;
-  bottom: 50px;
+  bottom: 0; /* CHANGED from 50px to 0 */
   overflow: visible;
 }
 
 .footer .soc {
   padding-top: 50px;
-  padding-bottom: 0;
+  padding-bottom: 50px; /* CHANGED from 0 to 50px */
   padding-right: 50px;
   margin-bottom: 0;
-  overflow: visible;
+  overflow: visible; /* Keep as visible */
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  max-height: calc(100vh - 100px);
+  align-items: center;
   box-sizing: border-box;
+  /* REMOVED max-height constraint */
 }
 
 .footer-navigation {
@@ -3974,7 +3974,7 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 0;
 }
 
@@ -4022,6 +4022,7 @@ body:has(.fx-ending-section) .footer .soc a:hover .icon {
 .footer .soc a.footer-download-cv:hover .footer-cv-icon {
   opacity: 0.7;
   filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(30deg);
+
 }
 
 /* Mode Toggle Container - Fixed at bottom center, independent of footer */

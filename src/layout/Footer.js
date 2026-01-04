@@ -18,7 +18,7 @@ const Footer = () => {
           <button onClick={() => scrollToSection('education')} className="button-scroll">Education   </button>
           <button onClick={() => scrollToSection('publications')} className="button-scroll">Publications   </button>
           <button onClick={() => scrollToSection('talks')} className="button-scroll">Talks</button>
-          <div className="follow-label">Connect—</div>
+          
           <a href="mailto:richag@mit.edu" className="footer-email">
             richag@mit.edu
           </a>
