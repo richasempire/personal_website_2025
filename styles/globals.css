@@ -1828,6 +1828,7 @@ img.mfp-img {
   line-height: 1.7;
   color: #333333;
   margin: 0;
+  text-align: justify;
 }
 
 .research-section-title {
@@ -2129,6 +2130,7 @@ img.mfp-img {
 
   .about-intro p {
     font-size: 17px;
+    text-align: justify;
   }
 
   .research-section-title {
@@ -2191,6 +2193,7 @@ img.mfp-img {
   .about-intro p {
     font-size: 16px;
     line-height: 1.6;
+    text-align: justify;
   }
 
   .research-section-title {

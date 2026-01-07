@@ -331,7 +331,41 @@ const PlusPage = () => {
                 <span className="shoreai-tag">#ServiceDesign</span>
                 <span className="shoreai-tag">#GrowthStrategy</span>
               </div>
-              <h1 className="hero-shoreai-title">Plus AI</h1>
+              <h1 className="hero-shoreai-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                Plus AI
+                <a 
+                  href="https://plus-ai-demo.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ 
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    opacity: 0.7,
+                    transition: 'opacity 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                  onMouseLeave={(e) => e.currentTarget.style.opacity = '0.7'}
+                  aria-label="Visit Plus AI website"
+                >
+                  <svg 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ display: 'inline-block' }}
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </h1>
               <p className="shoreai-description" style={{ maxWidth: '620px', textAlign: 'left' }}>
                 Plus AI is an AI-powered ecosystem designed specifically for architecture and interior design professionals.
                 <br /><br />

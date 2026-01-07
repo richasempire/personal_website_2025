@@ -88,8 +88,8 @@ const ProjectsSection = () => {
       category: "Entrepreneurship",
       description: "Decentralized autonomous organization for architectural projects",
       image: "/images/ArchiDAO.jpg",
-      link: "https://example.com/archidao",
-      external: true
+      link: "/archidao",
+      external: false
     },
     {
       id: 6,
@@ -127,7 +127,7 @@ const ProjectsSection = () => {
       image: "/images/Bike Design Completion.jpg",
       link: "https://letschec.my.canva.site/bike-design-inpainting",
       external: true,
-      comingSoon: true
+      comingSoon: false
     },
     {
       id: 10,
@@ -135,95 +135,104 @@ const ProjectsSection = () => {
       category: "AI & ML, Research, Human-AI Interaction, Design Technology",
       description: "Research on human-AI interaction beyond traditional prompting",
       image: "/images/beyondprompts.png",
-      link: "https://letschec.my.canva.site/bike-design-inpainting",
-      external: true,
-      comingSoon: true
+      link: "/beyondprompts",
+      external: false,
+      comingSoon: false
     },
+   
     {
       id: 11,
-      name: "Solve the Puzzle, Flex the Muscle",
-      category: "AI & ML, Product Engineering, Human-AI Interaction",
-      description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://letschec.my.canva.site/bike-design-inpainting",
-      external: true,
-      comingSoon: true
-    },
-    {
-      id: 12,
       name: "Hybrid Making",
       category: "AR/VR/MR, Research, Workshop, Human-AI Interaction, Design Technology",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://letschec.my.canva.site/bike-design-inpainting",
+      image: "/images/project_dummy.png",
+      link: "https://letschec.my.canva.site/hybrid-making",
       external: true,
-      comingSoon: true
+      comingSoon: false
     },
+   
+  
+    {
+      id: 12,
+      name: "Image-to-Material",
+      category: "AI & ML, Design Technology, Research",
+      description: "Research on human-AI interaction beyond traditional prompting",
+      image: "/images/project_dummy.png",
+      link: "https://www.canva.com/design/DAGEIIZoAC0/lRTjFELZcfgovGoU3_jIyw/view?utm_content=DAGEIIZoAC0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h47274a9c91",
+      external: true,
+      comingSoon: false
+    },
+ 
     {
       id: 13,
-      name: "Boston MBTA Data Visualization",
-      category: "Human-AI Interaction, Design Technology",
-      description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://letschec.my.canva.site/bike-design-inpainting",
-      external: true
-    },
-    {
-      id: 14,
       name: "3DGeometryTool - 3DIT",
       category: "Product Engineering",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
+      image: "/images/project_dummy.png",
       link: "https://github.com/richasempire/cube-in-action",
       external: true,
-      comingSoon: true
+      comingSoon: false
     },
+ 
     {
-      id: 15,
-      name: "Rat in the Hat",
-      category: "AR/VR/MR, Human-AI Interaction, Hackathon",
-      description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://www.youtube.com/watch?v=hleU5ndfpww",
-      external: true,
-      comingSoon: true
-    },
-    {
-      id: 16,
-      name: "Arch-SaaS",
-      category: "Product Design, Product Engineering, Design Technology",
-      description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://www.youtube.com/watch?v=hleU5ndfpww",
-      external: true,
-      comingSoon: true
-    },
-    {
-      id: 17,
-      name: "Drama in Architecture",
-      category: "Research",
-      description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://www.youtube.com/watch?v=hleU5ndfpww",
-      external: true,
-      comingSoon: true
-    },
-    {
-      id: 18,
+      id: 14,
       name: "AI4AeroDesigners",
       category: "Human-AI Interaction, Design Technology, AI & ML, Hackathon, Product Design, Product Engineering",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
+      image: "/images/project_dummy.png",
+      link: "/ai4aerodesigners",
+      external: false,
+      comingSoon: false
+    },
+
+    {
+      id: 15,
+      name: "Arch-SaaS",
+      category: "Product Design, Product Engineering, Design Technology",
+      description: "Research on human-AI interaction beyond traditional prompting",
+      image: "/images/project_dummy.png",
+      link: "https://www.canva.com/design/DAGZfpB1rhQ/EI5tsRU7FsV9JCPnC1ZhWg/view?utm_content=DAGZfpB1rhQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb0c001f13a",
+      external: true,
+      comingSoon: false
+    },
+    {
+      id: 16,
+      name: "Rat in the Hat",
+      category: "AR/VR/MR, Human-AI Interaction, Hackathon",
+      description: "Research on human-AI interaction beyond traditional prompting",
+      image: "/images/project_dummy.png",
+      link: "https://youtu.be/hleU5ndfpww",
+      external: true,
+      comingSoon: false
+    },
+    {
+      id: 17,
+      name: "Anthropic : AI Safety Governance Case Study",
+      category: "Research, AI & ML, AI Safety, Product Design",
+      description: "Research on human-AI interaction beyond traditional prompting",
+      image: "/images/project_dummy.png",
+      link: "/anthropic",
+      external: false,
+      comingSoon: false
+    },
+    
+    {
+      id: 18,
+      name: "Drama in Architecture",
+      category: "Research",
+      description: "Research on human-AI interaction beyond traditional prompting",
+      image: "/images/project_dummy.png",
       link: "https://www.youtube.com/watch?v=hleU5ndfpww",
       external: true,
       comingSoon: true
     },
+
     {
       id: 19,
       name: "AI Redteaming",
       category: "AI Safety, Human-AI Interaction, AI & ML",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
+      image: "/images/project_dummy.png",
       link: "https://www.youtube.com/watch?v=hleU5ndfpww",
       external: true,
       comingSoon: true
@@ -233,18 +242,18 @@ const ProjectsSection = () => {
       name: "AR & Metaverse",
       category: "AR/VR/MR, Human-AI Interaction, Design Technology",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
+      image: "/images/project_dummy.png",
       link: "https://www.youtube.com/watch?v=hleU5ndfpww",
       external: true,
       comingSoon: true
     },
     {
       id: 21,
-      name: "Image-to-Material",
-      category: "AI & ML, Design Technology, Research",
+      name: "Boston MBTA Data Visualization",
+      category: "Human-AI Interaction, Design Technology",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://www.youtube.com/watch?v=hleU5ndfpww",
+      image: "/images/project_dummy.png",
+      link: "https://letschec.my.canva.site/bike-design-inpainting",
       external: true,
       comingSoon: true
     },
@@ -253,7 +262,7 @@ const ProjectsSection = () => {
       name: "Computation",
       category: "Design Technology",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
+      image: "/images/project_dummy.png",
       link: "https://www.youtube.com/watch?v=hleU5ndfpww",
       external: true,
       comingSoon: true
@@ -263,20 +272,21 @@ const ProjectsSection = () => {
       name: "Images-to-Fiction",
       category: "Human-AI Interaction, Design Technology, AR/VR/MR",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
+      image: "/images/project_dummy.png",
       link: "https://www.youtube.com/watch?v=hleU5ndfpww",
       external: true
     },
     {
       id: 24,
-      name: "Anthropic : AI Safety Governance Case Study",
-      category: "Research, AI & ML, AI Safety, Product Design",
+      name: "Solve the Puzzle, Flex the Muscle",
+      category: "AI & ML, Product Engineering, Human-AI Interaction",
       description: "Research on human-AI interaction beyond traditional prompting",
-      image: "/images/beyondprompts.png",
-      link: "https://www.youtube.com/watch?v=hleU5ndfpww",
+      image: "/images/project_dummy.png",
+      link: "https://letschec.my.canva.site/bike-design-inpainting",
       external: true,
       comingSoon: true
-    }
+    },
+    
   ];
 
   // Get unique categories from all projects (extract all tags, not just first one)

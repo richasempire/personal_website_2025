@@ -258,7 +258,7 @@ const HeroIntro = () => {
       {/* Simple tagline - only show after animation */}
       {showText && (
         <div className="hero-design-for">
-          <div className="hero-tagline-main">I build AI systems that expand human agency</div>
+          <div className="hero-tagline-main">Building AI systems that expand human agency</div>
         </div>
       )}
 

@@ -22,7 +22,7 @@ const Footer = () => {
           <a href="mailto:richag@mit.edu" className="footer-email">
             richag@mit.edu
           </a>
-          <a href="/cv.pdf" download className="footer-nav-button footer-download-cv">
+          <a href="/pdf/resume_Richa_Gupta_s.pdf" target="_blank" rel="noopener noreferrer" className="footer-nav-button footer-download-cv">
             <img src="/images/download_cv.svg" alt="Download CV" className="footer-cv-icon" />
           </a>
          
