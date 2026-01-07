@@ -139,9 +139,9 @@ const ArchiDAOPage = () => {
                         <span className="heading-meta">What is ArchiDAO?</span>
                         <h2 className="colorlib-heading">Decentralized Autonomous Organisation</h2>
                         <p>ArchiDAO is a vibrant, decentralized, and community-led entity with no central authority. Smart contracts set the ground rules, handle proposals, and execute decisions, empowering a growing community of 500+ architects and technologists to reimagine our profession in the Web3 era.</p>
-                        <p>Our work spans the physical-digital divide, exploring Web3 integration in AEC through cutting-edge research and applications. From leveraging smart contracts to hosting metaverse workshops, Web3 hackathons, XR experiments, NFT launches, real estate tokenization, and active forums—we're pioneering a decentralized, collaborative future.</p>
+                        <p>Our work spans the physical-digital divide, exploring Web3 integration in AEC through cutting-edge research and applications. From leveraging smart contracts to hosting metaverse workshops, Web3 hackathons, XR experiments, NFT launches, real estate tokenization, and active forums—we&apos;re pioneering a decentralized, collaborative future.</p>
                         <p>It all started in December 2021. Seven professionals from across the globe—spanning the US, Europe, India, Brazil, and Australia—joined forces to explore how NFTs, blockchain, and the metaverse could reshape the AEC industry. Together, we founded ArchiDAO, a Decentralized Autonomous Organization (DAO) designed to unite like-minded individuals, foster collaboration, and develop equitable strategies using Web3 tools.</p>
-                        <p>ArchiDAO is more than a platform—it's a protocol of trust and shared vision. And yes, I'm proud to be one of the founding seven.</p>
+                        <p>ArchiDAO is more than a platform—it&apos;s a protocol of trust and shared vision. And yes, I&apos;m proud to be one of the founding seven.</p>
                       </div>
                     </div>
                   </div>
@@ -205,7 +205,7 @@ const ArchiDAOPage = () => {
                     <div className="about-desc">
                       <div className="quote-section">
                         <blockquote className="quote">
-                          "First DAO (Decentralisation Autonomous Organization) for AEC Industry!"
+                          &quot;First DAO (Decentralisation Autonomous Organization) for AEC Industry!&quot;
                           <cite>— Self claimed</cite>
                         </blockquote>
                       </div>

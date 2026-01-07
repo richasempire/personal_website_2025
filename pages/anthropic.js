@@ -116,7 +116,7 @@ const AnthropicPage = () => {
           <div className="anthropic-header">
             <h1 className="anthropic-title">Anthropic: AI Safety Governance Case Study</h1>
             <p className="anthropic-subtitle">
-              A comprehensive analysis of Anthropic's trust-building framework, governance architecture, 
+              A comprehensive analysis of Anthropic&apos;s trust-building framework, governance architecture, 
               and the tensions between safety-first branding and competitive pressures in frontier AI.
             </p>
             <a 

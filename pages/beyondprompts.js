@@ -453,7 +453,7 @@ const BeyondPromptsPage = () => {
             <ol>
               <li>Design visualisations embody complex perceptual qualities that are difficult to capture purely through numeric or linguistic descriptions.</li>
               <li>Designers (or prompt engineers!) need to construct very long and complex text prompts to generate images that convey envisioned qualities.</li>
-              <li>Gen-AI workflows lack intuitive capture of designers' visual intent</li>
+              <li>Gen-AI workflows lack intuitive capture of designers&apos; visual intent</li>
             </ol>
           </div>
         </section>
