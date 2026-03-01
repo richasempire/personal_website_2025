@@ -42,6 +42,16 @@ const DistillationBenchmarkPage = () => {
           background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
           background-size: 24px 24px;
         }
+        .dataset-code-block pre,
+        .dataset-code-block code {
+          background: transparent !important;
+          padding: 0 !important;
+          white-space: pre-wrap !important;
+          display: block !important;
+          max-width: 100%;
+          overflow: visible !important;
+          word-break: break-word;
+        }
       `}</style>
 
       <div className="min-h-screen">
@@ -72,8 +82,8 @@ const DistillationBenchmarkPage = () => {
                 <span className="google-gradient-text">Model Distillation</span>
               </h1>
               <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-gray-500 font-medium mb-10">
-                <span>Richa Gupta</span>
                 <span>Anshul Agarwal</span>
+                <span>Richa Gupta</span>
                 <span>Azusa Ito</span>
               </div>
               <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gray-200 text-sm text-gray-600 shadow-sm">
@@ -182,7 +192,7 @@ const DistillationBenchmarkPage = () => {
 
           {/* Performance Results Section */}
           <section className="max-w-7xl mx-auto px-6 py-24" id="results">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
               <h2 className="text-3xl font-bold text-gray-900">Performance Results</h2>
               <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">SQuAD v1.1 · 87,599 Questions</span>
             </div>
@@ -334,15 +344,15 @@ const DistillationBenchmarkPage = () => {
             </div>
             <div className="mt-8 grid md:grid-cols-3 gap-6">
               <div className="bg-gray-50 rounded-2xl p-6">
-                <div className="text-sm font-bold text-gray-900 mb-2">BERT-Large</div>
+                <div className="text-sm font-bold text-gray-900 mb-2">🎯 BERT-Large</div>
                 <p className="text-sm text-gray-500">Highest accuracy (EM: 83.2%, F1: 92.8%) but slowest. Best when accuracy is the top priority and compute resources are available.</p>
               </div>
               <div className="bg-blue-50 rounded-2xl p-6">
-                <div className="text-sm font-bold text-blue-700 mb-2">DistilBERT</div>
+                <div className="text-sm font-bold text-blue-700 mb-2">⚡ DistilBERT</div>
                 <p className="text-sm text-gray-500">Fastest model (~5.8× speedup). Most efficient on F1-per-inference-time. Ideal for real-time and low-resource deployment.</p>
               </div>
               <div className="bg-blue-50 rounded-2xl p-6">
-                <div className="text-sm font-bold text-blue-700 mb-2">MiniLM</div>
+                <div className="text-sm font-bold text-blue-700 mb-2">⚖️ MiniLM</div>
                 <p className="text-sm text-gray-500">Strongest accuracy among distilled models (EM: 79.4%, F1: 90.7%) with ~4.6× speedup. Best general-purpose choice.</p>
               </div>
             </div>
@@ -352,13 +362,15 @@ const DistillationBenchmarkPage = () => {
           <section className="max-w-7xl mx-auto px-6 py-24">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Dataset Characteristics</h2>
             <p className="text-gray-500 mb-10">SQuAD v1.1 — Stanford Question Answering Dataset · ~18K contexts · ~87K questions · ~87K answer spans</p>
-            <div className="bg-[#0f172a] rounded-[2.5rem] p-10 overflow-hidden relative shadow-2xl">
+            <div className="dataset-code-block bg-[#0f172a] rounded-[2.5rem] p-10 overflow-hidden relative shadow-2xl">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <pre className="text-sm font-mono text-blue-300 overflow-x-auto leading-relaxed"><code>{`// SQuAD v1.1 Sample Instance
+              
+              <pre className="text-sm font-mono text-blue-300 whitespace-pre-wrap break-words leading-relaxed">
+                <code>{`// SQuAD v1.1 Sample Instance
 {
   "context": "Architecturally, the school has a Catholic character.
     Atop the Main Building's gold dome is a golden statue
@@ -374,8 +386,9 @@ const DistillationBenchmarkPage = () => {
 // Model outputs logged per question:
 // → Predicted answer text
 // → Confidence score (from logits)
-// → Inference time (seconds)`}</code></pre>
-            </div>
+// → Inference time (seconds)`}</code>
+              </pre>
+</div>
           </section>
 
           {/* Future Work Section */}
@@ -383,14 +396,17 @@ const DistillationBenchmarkPage = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-10">Future Work</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-md transition-shadow">
+                <div className="text-2xl mb-4">🔬</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">Expand Model Coverage</h3>
                 <p className="text-sm text-gray-500">Benchmark smaller models like TinyBERT and MobileBERT to extend the comparison across a wider range of distillation approaches.</p>
               </div>
               <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-md transition-shadow">
+                <div className="text-2xl mb-4">📱</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">Edge Device Testing</h3>
                 <p className="text-sm text-gray-500">Measure latency and accuracy on real edge devices (e.g., Raspberry Pi, mobile) to validate distillation gains in production-like environments.</p>
               </div>
               <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-md transition-shadow">
+                <div className="text-2xl mb-4">🎯</div>
                 <h3 className="text-base font-bold text-gray-900 mb-2">Custom Distillation</h3>
                 <p className="text-sm text-gray-500">Apply task-specific distillation from BERT using custom datasets and loss functions for domain-specific QA tasks.</p>
               </div>
@@ -407,13 +423,13 @@ const DistillationBenchmarkPage = () => {
                 <p className="text-gray-400 text-sm">Department of Electrical Engineering and Computer Science</p>
               </div>
               <div className="flex gap-8 mt-6 md:mt-0 text-sm font-medium">
-                <a className="hover:text-blue-400 transition-colors" href="https://docs.google.com/presentation/d/17e1xzcxjGzClbwZSr4uD9uRQD-OksreEsuSg6CgflEY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Paper Presentation</a>
+                <a className="hover:text-blue-400 transition-colors" href="#">Paper PDF</a>
                 <a className="hover:text-blue-400 transition-colors" href="#">Code Repo</a>
                 <a className="hover:text-blue-400 transition-colors" href="#">BibTeX</a>
               </div>
             </div>
             <div className="flex justify-between items-center text-xs text-gray-500">
-              <p>© 2025 Gupta, Agarwal, & Ito. Academic Research Project.</p>
+              <p>© 2025 Agarwal, Gupta, & Ito. Academic Research Project.</p>
             </div>
           </div>
         </footer>
