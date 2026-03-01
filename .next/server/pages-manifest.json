@@ -2,9 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/ai": "pages/ai.js",
-  "/plus": "pages/plus.js",
-  "/": "pages/index.js",
-  "/shoreai": "pages/shoreai.js",
-  "/ai/shoreai": "pages/ai/shoreai.js"
+  "/": "pages/index.js"
 }

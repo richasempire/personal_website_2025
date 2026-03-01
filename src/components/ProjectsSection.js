@@ -286,7 +286,16 @@ const ProjectsSection = () => {
       external: true,
       comingSoon: true
     },
-    
+    {
+      id: 25,
+      name: "Advances in Model Distillation",
+      category: "AI & ML, Research",
+      description: "MIT 6.S964 research on compressing LLMs for edge devices via knowledge distillation",
+      image: "/images/project_dummy.png",
+      link: "/DistillationBenchmark.html",
+      external: true,
+      comingSoon: false
+    },
   ];
 
   // Get unique categories from all projects (extract all tags, not just first one)
