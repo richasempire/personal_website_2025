@@ -292,7 +292,7 @@ const ProjectsSection = () => {
       category: "AI & ML, Research",
       description: "MIT 6.S964 research on compressing LLMs for edge devices via knowledge distillation",
       image: "/images/project_dummy.png",
-      link: "/DistillationBenchmark.html",
+      link: "/distillation-benchmark",
       external: true,
       comingSoon: false
     },
