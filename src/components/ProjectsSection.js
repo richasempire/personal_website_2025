@@ -46,6 +46,16 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      id: 8,
+      name: "Beyond the Render",
+      category: "AI & ML, Research, Human-AI Interaction, AI Safety, Design Technology",
+      description: "Post-generative grounding for sustainable interior design — bridging AI renders and real-world material data",
+      image: "/images/beyondtherender.png",
+      link: "/beyondRenders",
+      external: false,
+      comingSoon: false
+    },
+    {
       id: 1,
       name: "Shore.ai",
       category: "Product Design, Product Engineering",
@@ -109,16 +119,7 @@ const ProjectsSection = () => {
       link: "/plus",
       external: false
     },
-    {
-      id: 8,
-      name: "Beyond the Render",
-      category: "AI & ML, Research, Human-AI Interaction, AI Safety, Design Technology",
-      description: "Exploring AI-generated architectural visualizations",
-      image: "/images/beyondtherender.png",
-      link: "https://letschec.my.canva.site/bike-design-inpainting",
-      external: true,
-      comingSoon: true
-    },
+  
     {
       id: 9,
       name: "Bike Design Completion",
@@ -293,7 +294,17 @@ const ProjectsSection = () => {
       description: "MIT 6.S964 research on compressing LLMs for edge devices via knowledge distillation",
       image: "/images/project_dummy.png",
       link: "/distillation-benchmark",
-      external: true,
+      external: false,
+      comingSoon: false
+    },
+    {
+      id: 26,
+      name: "Analogy-Guided VLM for 3D Design",
+      category: "AI & ML, Human-AI Interaction, Design Technology",
+      description: "Interface prototype for guiding vision-language models to edit 3D scenes via analogy and text",
+      image: "/images/project_dummy.png",
+      link: "/VLMAnalogy",
+      external: false,
       comingSoon: false
     },
   ];

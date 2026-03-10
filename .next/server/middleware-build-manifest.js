@@ -25,10 +25,10 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/distillation-benchmark": [
+    "/beyondRenders": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/distillation-benchmark.js"
+      "static/chunks/pages/beyondRenders.js"
     ]
   },
   "ampFirstPages": []
