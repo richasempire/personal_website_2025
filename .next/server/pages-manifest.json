@@ -1,7 +1,21 @@
 {
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
+  "/VLMAnalogy": "pages/VLMAnalogy.html",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/beyondRenders": "pages/beyondRenders.js"
+  "/_app": "pages/_app.js",
+  "/ai": "pages/ai.html",
+  "/ai/archidao": "pages/ai/archidao.html",
+  "/ai/plus": "pages/ai/plus.html",
+  "/ai/shoreai": "pages/ai/shoreai.html",
+  "/anthropic": "pages/anthropic.html",
+  "/archidao": "pages/archidao.html",
+  "/ai4aerodesigners": "pages/ai4aerodesigners.html",
+  "/distillation-benchmark": "pages/distillation-benchmark.html",
+  "/beyondprompts": "pages/beyondprompts.html",
+  "/beyondRenders": "pages/beyondRenders.html",
+  "/": "pages/index.html",
+  "/plus": "pages/plus.html",
+  "/portfolio": "pages/portfolio.html",
+  "/shoreai": "pages/shoreai.html",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
 }

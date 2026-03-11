@@ -292,7 +292,7 @@ export default function App() {
                 <span style={{ fontSize: 9, fontWeight: 700, color: "#64748b", letterSpacing: "0.1em", textTransform: "uppercase" }}>Instruction Context</span>
               </div>
               <div style={{ fontSize: 15, color: "#334155", lineHeight: 1.7, fontFamily: "'Inter', -apple-system, sans-serif", fontStyle: "italic" }}>
-                "{s.promptFormatted || s.description}"
+                &ldquo;{s.promptFormatted || s.description}&rdquo;
               </div>
               <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
                 <button style={{

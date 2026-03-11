@@ -1,1 +1,144 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[],"fallback":[]},"redirects":[{"source":"/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/","destination":"/:file","permanent":true,"internal":true,"missing":[{"type":"header","key":"x-nextjs-data"}],"regex":"^(?:\\/((?!\\.well-known(?:\\/.*)?)(?:[^/]+\\/)*[^/]+\\.\\w+))\\/$"},{"source":"/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)","destination":"/:notfile/","permanent":true,"internal":true,"regex":"^(?:\\/((?!\\.well-known(?:\\/.*)?)(?:[^/]+\\/)*[^/\\.]+))$"}],"headers":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/ai",
+      "regex": "^/ai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ai(?:/)?$"
+    },
+    {
+      "page": "/ai/archidao",
+      "regex": "^/ai/archidao(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ai/archidao(?:/)?$"
+    },
+    {
+      "page": "/ai/plus",
+      "regex": "^/ai/plus(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ai/plus(?:/)?$"
+    },
+    {
+      "page": "/ai/shoreai",
+      "regex": "^/ai/shoreai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ai/shoreai(?:/)?$"
+    },
+    {
+      "page": "/ai4aerodesigners",
+      "regex": "^/ai4aerodesigners(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ai4aerodesigners(?:/)?$"
+    },
+    {
+      "page": "/anthropic",
+      "regex": "^/anthropic(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/anthropic(?:/)?$"
+    },
+    {
+      "page": "/archidao",
+      "regex": "^/archidao(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/archidao(?:/)?$"
+    },
+    {
+      "page": "/beyondprompts",
+      "regex": "^/beyondprompts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/beyondprompts(?:/)?$"
+    },
+    {
+      "page": "/beyondRenders",
+      "regex": "^/beyondRenders(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/beyondRenders(?:/)?$"
+    },
+    {
+      "page": "/distillation-benchmark",
+      "regex": "^/distillation\\-benchmark(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/distillation\\-benchmark(?:/)?$"
+    },
+    {
+      "page": "/plus",
+      "regex": "^/plus(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/plus(?:/)?$"
+    },
+    {
+      "page": "/portfolio",
+      "regex": "^/portfolio(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portfolio(?:/)?$"
+    },
+    {
+      "page": "/shoreai",
+      "regex": "^/shoreai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/shoreai(?:/)?$"
+    },
+    {
+      "page": "/VLMAnalogy",
+      "regex": "^/VLMAnalogy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/VLMAnalogy(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
